@@ -7,25 +7,59 @@ package array;
  */
 public class MaximumSubarray {
 
-    public int maxSubArray(int[] nums) {
+    /**
+     * 暴力解法：时间复杂度 O(n²)，空间复杂度 O(1)
+     * @param nums
+     * @return
+     */
+    public int maxSubArray_Violence(int[] nums) {
         int len = nums.length;
-        int res = Integer.MIN_VALUE;
+        int res = nums[0];
         for (int right = 0; right < len; right++) {
-            for (int left = 0; left <= right; left++) {
-                int sum =0;
-                for (int i=left; i<right; i++){
-                    sum += nums[i];
-                }
+            int sum = 0;
+            for (int left = right; left < len; left++) {
+                sum += nums[left];
                 res = Math.max(res, sum);
             }
         }
         return res;
     }
 
+    /*其实这道题是一个非常经典的动态规划问题。该问题最早于 1977 年提出，但是直到 1984 年才被 Jay Kadane 发现了线性时间的最优解法。*/
+
+    /*假设sum<=0，那么后面的子序列肯定不包含目前的子序列，所以令sum = num；如果sum > 0对于后面的子序列是有好处的。res = Math.max(res, sum)保证可以找到最大的子序和。*/
+
+    /**
+     * 动态规划解法：时间复杂度 O(n)，空间复杂度 O(1)
+     * @param nums
+     * @return
+     */
+    public int maxSubArray_DynamicProgramming(int[] nums) {
+        int length = nums.length;
+        int max = nums[0];
+        int sum = max;
+        for(int i=1; i<length; i++){
+            if(sum > 0) {
+                sum += nums[i];
+            } else {
+                sum = nums[i];
+            }
+            max = Math.max(max, sum);
+        }
+        return max;
+    }
+
+    /*
+    该算法更为简便之处是忽略了对子序列的寻找比较,而是根据规律直接找出最佳答案.
+    对于含有正数的序列而言,最大子序列肯定是正数,所以头尾肯定都是正数.我们可以从第一个正数开始算起,每往后加一个数便更新一次和的最大值;
+    当当前和成为负数时,则表明此前序列无法为后面提供最大子序列和,因此必须重新确定序列首项.
+    */
+
+
     public static void main(String[] args) {
         MaximumSubarray maximumSubarray = new MaximumSubarray();
         int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
-        int result = maximumSubarray.maxSubArray(nums);
+        int result = maximumSubarray.maxSubArray_DynamicProgramming(nums);
         System.out.println(result);
     }
 }
