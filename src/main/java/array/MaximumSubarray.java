@@ -99,3 +99,5 @@ public class MaximumSubarray {
         System.out.println(result);
     }
 }
+
+/**参考：https://blog.csdn.net/lw_power/article/details/104062895*/
