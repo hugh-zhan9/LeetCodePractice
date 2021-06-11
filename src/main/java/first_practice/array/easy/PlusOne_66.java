@@ -34,7 +34,7 @@ package first_practice.array.easy;
  * @description
  * @since 2021/6/8 17:21
  */
-public class PlusOne {
+public class PlusOne_66 {
     public int[] plusOne(int[] digits) {
         for(int i = digits.length-1; i>=0; i--){
             digits[i]++;
@@ -50,7 +50,7 @@ public class PlusOne {
     }
 
     public static void main(String[] args) {
-        PlusOne plusOne = new PlusOne();
+        PlusOne_66 plusOne = new PlusOne_66();
         int[] digits = {9,9};
         int[] result = plusOne.plusOne(digits);
         for (int c: result){

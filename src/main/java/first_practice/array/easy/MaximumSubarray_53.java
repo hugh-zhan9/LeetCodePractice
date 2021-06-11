@@ -41,7 +41,7 @@ package first_practice.array.easy;
  * @description
  * @since 2021/6/4 16:52
  */
-public class MaximumSubarray {
+public class MaximumSubarray_53 {
 
     /**
      * 暴力解法：时间复杂度 O(n²)，空间复杂度 O(1)
@@ -93,7 +93,7 @@ public class MaximumSubarray {
 
 
     public static void main(String[] args) {
-        MaximumSubarray maximumSubarray = new MaximumSubarray();
+        MaximumSubarray_53 maximumSubarray = new MaximumSubarray_53();
         int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
         int result = maximumSubarray.maxSubArray_DynamicProgramming(nums);
         System.out.println(result);
