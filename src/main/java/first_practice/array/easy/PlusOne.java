@@ -1,4 +1,4 @@
-package array;
+package first_practice.array.easy;
 
 /**
  * 给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。
@@ -28,8 +28,6 @@ package array;
  * 链接：https://leetcode-cn.com/problems/plus-one
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-
-import java.util.Arrays;
 
 /**
  * @author zyk
