@@ -1,22 +1,26 @@
+import first_practice.array.easy.RemoveDuplicates_26;
+
+import java.util.Arrays;
+import java.util.List;
+
 class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        int[] a = null;
-        for(int i=0; i<nums.length ;i++){
-            for (int j=nums.length-1; j>i;j--){
-                if (target == (nums[i]+nums[j])){
-                    a = new int[]{i, j};
-                    break;
-                }
+    public int removeDuplicates(int[] nums) {
+        String[] strArray= new String[]{"Tom", "Bob", "Jane"};
+        List<String> strList= Arrays.asList(strArray);
+
+        List<int[]> ints = Arrays.asList(nums);
+        for (int i =0; i<ints.size(); i++){
+            if (ints.contains(nums[i])){
+                ints.remove(nums[i]);
             }
         }
-        return a;
+        return ints.size();
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] test = new int[] {3,3};
-        int target = 6;
-        int[] ints = solution.twoSum(test, target);
-        System.out.println(""+ints[0] + ints[1]);
+        int[] test = new int[] {1,1,2};
+        int ints = solution.removeDuplicates(test);
+        System.out.println(ints);
     }
 }
