@@ -46,25 +46,14 @@ package first_practice.array.easy;
 public class RemoveDuplicates_26 {
 
     /**
-     * 暴力解法，时间复杂度为O(n²),空间复杂度为O(1)
-     */
-
-    /**
      * 双指针解法，时间复杂度为O(n²),空间复杂度为O(1)
      */
     public int removeDuplicates1(int[] nums) {
-        int quick = 1;
         int slow = 0;
-        if (nums.length==0){
-            return 0;
-        }
-        while (quick < nums.length){
-            if (nums[quick] == nums[slow]){
-                quick ++;
-            }else {
-                slow ++;
+        for (int quick=1; quick< nums.length; quick++){
+            if (nums[quick] != nums[slow]) {
+                slow++;
                 nums[slow] = nums[quick];
-                quick++;
             }
         }
         return slow+1;
