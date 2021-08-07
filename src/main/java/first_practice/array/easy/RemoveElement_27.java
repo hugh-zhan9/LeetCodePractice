@@ -132,6 +132,23 @@ public class RemoveElement_27 {
      * 内存消耗：37 MB, 在所有 Java 提交中击败了38.89%的用户
      */
 
+
+    /** 对比对撞指针的解法，边界条件的要好好思考一下 */
+    public int removeElement3(int[] nums, int val){
+        int left = 0;
+        int right = nums.length-1;
+        // 这里的判断条件修改为 <= ，因为right一开始就指向了最后一个元素。如果是 < 的话，left 会少走一步
+        while (left <= right){
+            if (nums[left] == val){
+                nums[left] = nums[right];
+                right --;
+            }else {
+                left++;
+            }
+        }
+        return left;
+    }
+
     public static void main(String[] args) {
         int[] test = new int[] {3,2,2,3};
         RemoveElement_27 solution = new RemoveElement_27();
