@@ -71,6 +71,26 @@ public class SearchInsert_35 {
         return post;
     }
 
+    /** 优化，减去判断target小于num[0]的情况*/
+    public int searchInsert1(int[] nums, int target) {
+        int post = 0;
+        int left = 0;
+        int right = nums.length-1;
+        if (nums[nums.length-1] < target){
+            return nums.length;
+        }
+        while (left <= right){
+            int mid = ((right - left)>>1) + left;
+            if (target <= nums[mid]){
+                post = mid;
+                right = mid-1;
+            }else {
+                left = mid+1;
+            }
+        }
+        return post;
+    }
+
     public static void main(String[] args) {
         SearchInsert_35 solution = new SearchInsert_35();
         int[] test = new int[] {1,3,5,6};
