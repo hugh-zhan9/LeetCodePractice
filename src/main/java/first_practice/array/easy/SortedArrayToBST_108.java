@@ -28,7 +28,7 @@ package first_practice.array.easy;
 
 /**
  * @author zyk
- * @description
+ * @description 虽然是一道简单题，但没写出来，还是需要更多的锻炼啊
  * @since 2021/8/9 6:29
  */
 public class SortedArrayToBST_108 {
@@ -47,10 +47,32 @@ public class SortedArrayToBST_108 {
         }
     }
 
-      public TreeNode sortedArrayToBST(int[] nums) {
-         TreeNode treeNode = new TreeNode();
-         return treeNode;
-      }
+    /**
+     * 二分查找中间节点，作为root节点，左右子区间作为左右节点
+     * 时间复杂度O(n)，空间复杂度O(logn)
+     * 空间复杂度不考虑返回值，因此空间复杂度主要取决于递归栈的深度，递归栈的深度是 O(logn)。
+     */
+    public TreeNode sortedArrayToBST(int[] nums) {
+        return queryLR(0,nums.length-1,nums);
+    }
 
+    public TreeNode queryLR(int left,int right,int[] nums){
+        if (right < left){
+            return null;
+        }
+        int mid = (left+right)/2;
+        TreeNode treeNode = new TreeNode(nums[mid]);
+        treeNode.left = queryLR(left,mid-1,nums);
+        treeNode.right = queryLR(mid+1,right,nums);
+        return treeNode;
+    }
+
+
+    public static void main(String[] args) {
+        SortedArrayToBST_108 solution = new SortedArrayToBST_108();
+        int[] test = new int[] {-10,-3,0,5,9};
+        TreeNode ints = solution.sortedArrayToBST(test);
+        System.out.println(ints);
+    }
 }
 
