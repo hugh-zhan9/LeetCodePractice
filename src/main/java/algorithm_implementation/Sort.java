@@ -153,6 +153,8 @@ public class Sort {
         int pivot = a[end];
         int i = start;
         for(int j = start; j < end; ++j) {
+            // 双指针，如果a[j] < pivot 就将其放到前半部分，即交换位置
+            // i 只有在j指定的元素小于pivot 或 i=j时才会增加
             if (a[j] < pivot) {
                 if (i == j) {
                     ++i;
@@ -164,11 +166,11 @@ public class Sort {
             }
         }
 
+        // 交换 pivot 到指定位置
         int tmp = a[i];
         a[i] = a[end];
         a[end] = tmp;
 
-        // System.out.println("i=" + i);
         return i;
     }
 
