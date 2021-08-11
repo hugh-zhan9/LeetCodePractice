@@ -86,7 +86,7 @@ public class Sort {
      * @param n
      */
     public void mergeSort(int[] a,int n){
-        decomposition(a,0,n);
+        decomposition(a,0,n-1);
     }
 
     private void decomposition(int[] a, int p, int r) {
