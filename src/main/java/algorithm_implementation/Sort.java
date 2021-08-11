@@ -1,5 +1,7 @@
 package algorithm_implementation.sort;
 
+import java.util.IllegalFormatCodePointException;
+
 /**
  * @author zyk
  * @description
@@ -133,10 +135,48 @@ public class Sort {
     }
 
 
+    /** 快速排序 */
+    public void quickSort(int[] a, int n){
+        quickSortDecomposition(a,0,n-1);
+    }
+
+    private void quickSortDecomposition(int[] a, int start, int end) {
+        if (start >= end) return;
+
+        int point = partition(a,start,end);
+
+        quickSortDecomposition(a,start,point-1);
+        quickSortDecomposition(a,point+1,end);
+    }
+
+    private int partition(int[] a, int start, int end) {
+        int pivot = a[end];
+        int i = start;
+        for(int j = start; j < end; ++j) {
+            if (a[j] < pivot) {
+                if (i == j) {
+                    ++i;
+                } else {
+                    int tmp = a[i];
+                    a[i++] = a[j];
+                    a[j] = tmp;
+                }
+            }
+        }
+
+        int tmp = a[i];
+        a[i] = a[end];
+        a[end] = tmp;
+
+        // System.out.println("i=" + i);
+        return i;
+    }
+
+
     public static void main(String[] args) {
         Sort sort = new Sort();
         int[] a = {1,2,3,4,9,8,7};
-        sort.mergeSort(a,7);
+        sort.quickSort(a,7);
         for (int i=0; i<a.length; i++){
             System.out.println(a[i]);
         }
