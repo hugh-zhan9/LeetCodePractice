@@ -1,4 +1,4 @@
-package algorithm_implementation.sort;
+package algorithm_implementation;
 
 import java.util.IllegalFormatCodePointException;
 
@@ -175,13 +175,90 @@ public class Sort {
     }
 
 
+    /** 桶排序 */
+    public void bucketSort(int[] a, int bucketSize){
+        int min = a[0];
+        int max = a[0];
+        for (int i=0; i<a.length; i++){
+            if (a[i]>max){
+                max = a[i];
+            }else if (a[i]<min) {
+                min = a[i];
+            }
+        }
+
+        // 找到最大最小值之后进行分桶
+        int bucketCount = (max-min)/bucketSize;
+        if ((max-min)/bucketSize%bucketSize>0){
+            bucketCount++;
+        }
+        int[][] bucket = new int[bucketCount][bucketSize];
+        // 用来存储每个桶中放置了多少个元素
+        int[] bucketCapacity = new int[bucketCount];
+
+        /* 最开始写成这样，使用j来表示插入位置，然后发现需要保存每个桶保存了多少元素
+        int j =0;
+        // 把元素分桶
+        for (int i=0; i<a.length; i++){
+            int size = (a[i] - min)/bucketSize;
+            if (i%bucketSize==0){
+                j=0;
+            }
+            bucket[size][j++] = a[i];
+        }
+
+        int k=0;
+        // 每个桶中使用快速排序进行排序
+        for (int i=0; i<bucketCount; i++){
+            quickSort(bucket[i],bucketSize);
+            for (int e:bucket[i]){
+                a[k++] = e; // 不使用扩容的话，中间的桶里会包含不存在的值
+            }
+        }
+        */
+
+        // 元素分桶
+        for (int i = 0; i < a.length; i++) {
+            int bucketIndex = (a[i] - min) / bucketSize;
+            if (bucketCapacity[bucketIndex] == bucket[bucketIndex].length) {
+                ensureCapacity(bucket, bucketIndex);
+            }
+            bucket[bucketIndex][bucketCapacity[bucketIndex]++] = a[i];
+        }
+
+        // 将桶中元素放入到原数组中
+        int k = 0;
+        for (int i = 0; i < bucket.length; i++) {
+            if (bucketCapacity[i] == 0) {
+                continue;
+            }
+            // 实际参与快速排序的元素只有一个，所以理论上这个数组长度为1
+            quickSort(bucket[i],bucketCapacity[i]);
+
+            for (int j = 0; j < bucketCapacity[i]; j++) {
+                a[k++] = bucket[i][j];
+            }
+        }
+
+    }
+
+    // 数组扩容
+    private void ensureCapacity(int[][] buckets, int bucketIndex) {
+        int[] tempArr = buckets[bucketIndex];
+        int[] newArr = new int[tempArr.length * 2];
+        for (int j = 0; j < tempArr.length; j++) {
+            newArr[j] = tempArr[j];
+        }
+        buckets[bucketIndex] = newArr;
+    }
+
+
     public static void main(String[] args) {
         Sort sort = new Sort();
         int[] a = {1,2,3,4,9,8,7};
-        sort.quickSort(a,7);
+        sort.bucketSort(a,3);
         for (int i=0; i<a.length; i++){
             System.out.println(a[i]);
         }
     }
 }
-
