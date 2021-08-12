@@ -253,10 +253,47 @@ public class Sort {
     }
 
 
+    /** 计数排序 */
+    public void countingSort(int[] a, int n){
+        // 先找到数据中的最大最小值
+        int max = a[0];
+        for (int i=0; i<a.length; i++){
+            if (a[i]>max){
+                max = a[i];
+            }
+        }
+
+        // 计算桶的数量
+        int[] c = new int[max+1];
+
+        // 将每个元素的个数加到数组中
+        for (int i=0;i<a.length;i++){
+            c[a[i]]++;
+        }
+
+        for (int i=1; i<c.length; i++){
+            c[i] = c[i] + c[i-1];
+        }
+
+        int[] r = new int[n];
+        // 计算排序的关键步骤，有点难理解
+        for (int i=n-1; i >= 0; --i) {
+            int index = c[a[i]]-1;
+            r[index] = a[i];
+            c[a[i]]--;
+        }
+
+        // 将结果拷贝会a数组
+        for (int i = 0; i < n; ++i) {
+            a[i] = r[i];
+        }
+    }
+
+    
     public static void main(String[] args) {
         Sort sort = new Sort();
-        int[] a = {1,2,3,4,9,8,7};
-        sort.bucketSort(a,3);
+        int[] a = {2, 5, 3, 0, 2, 3, 0, 3};
+        sort.countingSort(a,a.length);
         for (int i=0; i<a.length; i++){
             System.out.println(a[i]);
         }
