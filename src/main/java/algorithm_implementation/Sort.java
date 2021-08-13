@@ -288,12 +288,57 @@ public class Sort {
             a[i] = r[i];
         }
     }
-
     
+    
+
+    /** 基数排序 */
+    public void radixSort(int[] a) {
+        // 找到最大值
+        int max = a[0];
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] > max) {
+                max = a[i];
+            }
+        }
+
+        // 从个位开始，对数组a按 "指数" 进行排序
+        for (int exp = 1; max/exp > 0; exp *= 10) {
+            radixCountingSort(a, exp);
+        }
+    }
+
+    // 基数排序修改后的计数排序
+    public void radixCountingSort(int[] a, int exp){
+        // 计算每个元素的个数
+        int[] c = new int[10];
+        for (int i = 0; i<a.length; i++) {
+            // 求余数就可以拿到最后一位了
+            c[(a[i] / exp) % 10]++;
+        }
+
+        for (int i=1; i<c.length; i++){
+            c[i] = c[i-1]+c[i];
+        }
+
+        int[] r = new int[a.length];
+        // 交换数据
+        for (int i=a.length-1; i>=0; i--){
+            int index = c[a[i]/exp%10]-1;
+            r[index] = a[i];
+            c[a[i]/exp % 10]--;
+        }
+
+        for (int i = a.length-1; i>=0; --i) {
+            a[i] = r[i];
+        }
+    }
+
+
+
     public static void main(String[] args) {
         Sort sort = new Sort();
-        int[] a = {2, 5, 3, 0, 2, 3, 0, 3};
-        sort.countingSort(a,a.length);
+        int[] a = {211, 511, 311, 11, 212, 313, 413, 314};
+        sort.radixSort(a);
         for (int i=0; i<a.length; i++){
             System.out.println(a[i]);
         }
