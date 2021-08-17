@@ -66,7 +66,7 @@ public class ContainsDuplicate_217 {
      */
 
 
-    /** 排序，相邻的元素相等就返回。时间复杂度O(nlogn)，空间复杂度O(logN)*/
+    /** 排序解法，相邻的元素相等就返回。时间复杂度O(nlogn)，空间复杂度O(logN)*/
     public boolean containsDuplicate3(int[] nums) {
         Arrays.sort(nums);
         int n = nums.length;
