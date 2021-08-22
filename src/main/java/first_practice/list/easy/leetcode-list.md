@@ -104,7 +104,73 @@ public class MergeTwoLists_21 {
 
 对于链表和递归还是不熟悉，需要多练
 
-# 141 环形链表
+
+
+# 83. 删除排序链表中的重复元素
+
+## 描述
+
+存在一个按升序排列的链表，给你这个链表的头节点 head ，请你删除所有重复的元素，使每个元素只出现一次 。
+返回同样按升序排列的结果链表。
+示例 1：
+
+>![](https://assets.leetcode.com/uploads/2021/01/04/list1.jpg)
+>输入：`head = [1,1,2]`
+>输出：`[1,2]`
+
+示例 2：
+
+>![](https://assets.leetcode.com/uploads/2021/01/04/list2.jpg)
+>输入：`head = [1,1,2,3,3]`
+>输出：`[1,2,3]`
+
+提示：
+
+- 链表中节点数目在范围 [0, 300] 内
+- -100 <= Node.val <= 100
+- 题目数据保证链表已经按升序排列
+
+
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+## 题解
+
+ ```java
+ public class DeleteDuplicate_83 {
+ 
+     /** 遍历一次有序链表，移除重复的元素。时间复杂度O(n)，空间复杂度O(1) */
+     public ListNode deleteDuplicates(ListNode head) {
+         if (head == null){
+             return head;
+         }
+         ListNode current = head;
+         while (current.next != null){
+             if (current.val == current.next.val){
+                 current.next = current.next.next;
+             }else {
+                 current = current.next;
+             }
+         }
+         return head;
+     }
+ 
+     /**
+      * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+      * 内存消耗：38.3 MB, 在所有 Java 提交中击败了5.01%的用户
+      */
+ 
+     /** 尝试使用递归解一下 */
+ 
+ }
+ 
+ ```
+
+
+
+# 141. 环形链表
 > 难度：简单
 ## 描述
 给定一个链表，判断链表中是否有环。
@@ -119,22 +185,22 @@ public class MergeTwoLists_21 {
 
 示例 1：
 >![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png)
- 输入：head = [3,2,0,-4], pos = 1
+ 输入：head = [3,2,0,-4]，pos = 1
  输出：true
  解释：链表中有一个环，其尾部连接到第二个节点。
 
 示例 2：
 >![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png)
- 输入：head = [1,2], pos = 0
+ 输入：head = [1,2]，pos = 0
  输出：true
  解释：链表中有一个环，其尾部连接到第一个节点。
 
 示例 3：
 >![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png)
- 输入：head = [1], pos = -1
+ 输入：head = [1]，pos = -1
  输出：false
  解释：链表中没有环。
- 
+
 
 提示：
 - 链表中节点的数目范围是 [0, 104]
@@ -178,6 +244,7 @@ public class HasCycle_141 {
 
     /** 想到了快慢指针来解，但是不知道怎么循环 */
     public boolean hasCycle2(ListNode head){
+        
         /* 我尝试写的...
         ListNode post = head;
         ListNode fastNode = head;
