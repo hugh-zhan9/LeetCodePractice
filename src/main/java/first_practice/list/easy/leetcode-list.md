@@ -305,8 +305,7 @@ public class HasCycle_141 {
 > 在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
 
 示例 2：
-
->![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_2.png)
+![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_2.png)
 > 输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
 > 输出：Intersected at '2'
 > 解释：相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。
@@ -314,8 +313,7 @@ public class HasCycle_141 {
 > 在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。
 
 示例 3：
-
->![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_3.png)
+![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_3.png)
 > 输入：intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
 > 输出：null
 > 解释：从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。
