@@ -57,7 +57,7 @@ public class IsPalindrome_234 {
 
     /** 借用206题翻转链表的实现 */
     /** 时间复杂度O(n)，空间复杂度O(n)，空间复杂度主要体现在栈的深度上 */
-    public ListNode reverseByRecursion (ListNode head) {
+    public ListNode reverseByRecursion (ListNode head){
         // 递归到最后一个节点，返回新的新的头结点
         if (head.next == null) {
             return head;
@@ -74,7 +74,7 @@ public class IsPalindrome_234 {
      */
 
     /** 时间复杂度O(n)，空间复杂度O(1) */
-    public ListNode reverseByIteration(ListNode head) {
+    public ListNode reverseByIteration(ListNode head){
         ListNode prev = null;
         ListNode curr = head;
         while (curr != null){
@@ -93,11 +93,79 @@ public class IsPalindrome_234 {
 
 
 
-    /** 将值复制到数组中后用双指针法 */
-    public boolean isPalindrome3(ListNode head) {
-        return false;
+    /** 将值复制到数组中后用双指针法， 时间复杂度O(n)，空间复杂度O(n)*/
+    public boolean isPalindrome2(ListNode head) {
+        List<Integer> array = new ArrayList<>();
+        while (head != null){
+            array.add(head.val);
+            head = head.next;
+        }
+        int i=0;
+        int j=array.size()-1;
+        while (i <= j){
+            if (!array.get(i).equals(array.get(j))){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
     }
 
+    /**
+     * 执行用时：8 ms, 在所有 Java 提交中击败了45.51%的用户
+     * 内存消耗：50.8 MB, 在所有 Java 提交中击败了35.58%的用户
+     */
+
+
+
+    /** 递归实现，完全没有思路。。。 */
+    /**
+     * 思想：
+     * 递归为我们提供了一种优雅的方式来方向遍历节点。
+     * function print_values_in_reverse(ListNode head)
+     *     if head is NOT null
+     *         print_values_in_reverse(head.next)
+     *         print head.val
+     * 如果使用递归反向迭代节点，同时使用递归函数外的变量向前迭代，就可以判断链表是否为回文。
+     *
+     * 算法：
+     * currentNode 指针是先到尾节点，由于递归的特性再从后往前进行比较。
+     * frontPointer 是递归函数外的指针。若 currentNode.val != frontPointer.val 则返回 false。
+     * 反之，frontPointer 向前移动并返回 true。
+     *
+     * 时间复杂度：O(n)，空间复杂度：O(n)，
+     * 我们要理解计算机如何运行递归函数，
+     * 在一个函数中调用一个函数时，计算机需要在进入被调用函数之前跟踪它在当前函数中的位置（以及任何局部变量的值），通过运行时存放在堆栈中来实现（堆栈帧）。
+     * 在堆栈中存放好了数据后就可以进入被调用的函数。
+     * 在完成被调用函数之后，他会弹出堆栈顶部元素，以恢复在进行函数调用之前所在的函数。
+     * 在进行回文检查之前，递归函数将在堆栈中创建 n 个堆栈帧，计算机会逐个弹出进行处理。
+     * 所以在使用递归时空间复杂度要考虑堆栈的使用情况。
+     * 这种方法不仅使用了 O(n) 的空间，且比第一种方法更差，因为在许多语言中，堆栈帧的开销很大（如 Python），
+     * 并且最大的运行时堆栈深度为 1000（可以增加，但是有可能导致底层解释程序内存出错）。
+     * 为每个节点创建堆栈帧极大的限制了算法能够处理的最大链表大小。
+     */
+    public boolean isPalindrome3(ListNode head) {
+        frontPointer = head;
+        return recursivelyCheck(head);
+    }
+
+    private ListNode frontPointer;
+
+    private boolean recursivelyCheck(ListNode currentNode) {
+        if (currentNode != null) {
+            if (!recursivelyCheck(currentNode.next)) {
+                return false;
+            }
+            if (currentNode.val != frontPointer.val) {
+                return false;
+            }
+            frontPointer = frontPointer.next;
+        }
+        return true;
+    }
+
+    
     public static void main(String[] args) {
         ListNode head = new ListNode();
         head.val = 1;
@@ -109,7 +177,7 @@ public class IsPalindrome_234 {
         node3.val = 1; node2.next = node3;
 
         IsPalindrome_234 solution = new IsPalindrome_234();
-        System.out.println(solution.isPalindrome(head));
+        System.out.println(solution.isPalindrome2(head));
     }
 
 }
