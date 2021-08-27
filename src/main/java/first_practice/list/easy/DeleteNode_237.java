@@ -28,13 +28,34 @@ package first_practice.list.easy;
  */
 
 /**
+ * Write a function to delete a node in a singly-linked list.
+ * You will not be given access to the head of the list, instead you will be given access to the node to be deleted directly.
+ *
+ * It is guaranteed that the node to be deleted is not a tail node in the list.
+ */
+
+/**
  * @author zyk
  * @description
  * @since 2021/8/27 6:58
  */
 public class DeleteNode_237 {
+
+    /** 这题。。做的我一脸懵逼呀 */
     public void deleteNode(ListNode node) {
-        while (node.next != null){
-        }
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
+
+    /**
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：38 MB, 在所有 Java 提交中击败了20.96%的用户
+     */
 }
+
+
+/**
+ * 这道题细思极恐：如何让自己在世界上消失，但又不死？ —— 将自己完全变成另一个人，再杀了那个人就行了。
+ *
+ * 还是评论大神多
+ */
