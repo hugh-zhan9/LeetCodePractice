@@ -28,9 +28,9 @@
 - `-100 <= Node.val <= 100`
 - `l1` 和 `l2` 均按 非递减顺序 排列
 
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/merge-two-sorted-lists
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+> 来源：力扣（LeetCode）
+> 链接：https://leetcode-cn.com/problems/merge-two-sorted-lists
+> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ## 题解
 
@@ -132,9 +132,9 @@ public class MergeTwoLists_21 {
 
 
 
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+> 来源：力扣（LeetCode）
+> 链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list
+> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ## 题解
 
@@ -207,9 +207,9 @@ public class MergeTwoLists_21 {
 - -105 <= Node.val <= 105
 - pos 为 -1 或者链表中的一个 有效索引 。
 
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/linked-list-cycle
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+> 来源：力扣（LeetCode）
+> 链接：https://leetcode-cn.com/problems/linked-list-cycle
+> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ## 题解
 
@@ -333,9 +333,9 @@ public class HasCycle_141 {
 
 进阶：你能否设计一个时间复杂度 O(n) 、仅用 O(1) 内存的解决方案？
 
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/intersection-of-two-linked-lists
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+> 来源：力扣（LeetCode）
+> 链接：https://leetcode-cn.com/problems/intersection-of-two-linked-lists
+> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ## 题解
 
@@ -431,9 +431,9 @@ public class GetIntersectionNode_160 {
 
 
 
-来源：力扣（LeetCode)
-链接：https://leetcode-cn.com/problems/remove-linked-list-elements
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+> 来源：力扣（LeetCode)
+> 链接：https://leetcode-cn.com/problems/remove-linked-list-elements
+> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ## 题解
 
@@ -591,9 +591,9 @@ public class RemoveElements_203 {
 
 
 
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/reverse-linked-list/
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+> 来源：力扣（LeetCode）
+> 链接：https://leetcode-cn.com/problems/reverse-linked-list/
+> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ## 题解
 
@@ -687,18 +687,18 @@ public class ReverseList_206 {
 ![](https://assets.leetcode.com/uploads/2021/03/03/pal2linked-list.jpg)
 >输入：head = [1,2]
 >输出：false
- 
+
 
 提示：
 - 链表中节点数目在范围[1, 105] 内
 - 0 <= Node.val <= 9
- 
+
 
 进阶：你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
 
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/palindrome-linked-list
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+> 来源：力扣（LeetCode）
+> 链接：https://leetcode-cn.com/problems/palindrome-linked-list
+> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ## 题解
 ```java
@@ -872,14 +872,486 @@ public class IsPalindrome_234 {
 >输入：head = [4,5,1,9], node = 1
 >输出：[4,5,9]
 >解释：给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -> 5 -> 9.
- 
+
 提示：
 - 链表至少包含两个节点。
 - 链表中所有节点的值都是唯一的。 
 - 给定的节点为非末尾节点并且一定是链表中的一个有效节点。
 - 不要从你的函数中返回任何结果。
 
+> 来源：力扣（LeetCode）
+> 链接：https://leetcode-cn.com/problems/delete-node-in-a-linked-list
+> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/delete-node-in-a-linked-list
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+## 题解
+```java
+public class DeleteNode_237 {
+
+    /** 这题。。做的我一脸懵逼呀 */
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+    }
+
+    /**
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：38 MB, 在所有 Java 提交中击败了20.96%的用户
+     */
+}
+
+
+/**
+ * 这道题细思极恐：如何让自己在世界上消失，但又不死？ —— 将自己完全变成另一个人，再杀了那个人就行了。
+ *
+ * 还是评论大神多
+ */
+```
+
+# 705. 设计哈希集合
+> 难度：简单
+## 描述
+不使用任何内建的哈希表库设计一个哈希集合（HashSet）。
+
+实现 MyHashSet 类：
+- `void add(key)` 向哈希集合中插入值 key 。
+- `bool contains(key)` 返回哈希集合中是否存在这个值 key 。
+- `void remove(key)` 将给定值 key 从哈希集合中删除。如果哈希集合中没有这个值，什么也不做。
+
+示例：
+>输入：
+> ["MyHashSet", "add", "add", "contains", "contains", "add", "contains", "remove", "contains"]
+> [[], [1], [2], [1], [3], [2], [2], [2], [2]]
+> 输出：
+> [null, null, null, true, false, null, true, null, false]
+
+> 解释：
+> MyHashSet myHashSet = new MyHashSet();
+> myHashSet.add(1);      // set = [1]
+> myHashSet.add(2);      // set = [1, 2]
+> myHashSet.contains(1); // 返回 True
+> myHashSet.contains(3); // 返回 False ，（未找到）
+> myHashSet.add(2);      // set = [1, 2]
+> myHashSet.contains(2); // 返回 True
+> myHashSet.remove(2);   // set = [1]
+> myHashSet.contains(2); // 返回 False ，（已移除）
+
+
+提示：
+- 0 <= key <= 106
+- 最多调用 104 次 add、remove 和 contains 。
+
+进阶：你可以不使用内建的哈希集合库解决此问题吗？
+
+> 来源：力扣（LeetCode）
+> 链接：https://leetcode-cn.com/problems/design-hashset
+> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+## 题解
+
+> [更多题解可参考：【宫水三叶】一题三解：「简单数组」&「链表」& 「分桶数组」](https://leetcode-cn.com/problems/design-hashset/solution/yi-ti-san-jie-jian-dan-shu-zu-lian-biao-nj3dg/)
+
+### 暴力解
+
+```java
+public class MyHashSet_705 {
+
+    private ListNode head;
+    private ListNode current;
+
+    /** 暴力实现，哭了。。。好多边界条件没考虑到 */
+
+    /** Initialize your data structure here. */
+    public MyHashSet_705() {
+        head = new ListNode();
+        head.val = -1;
+        current = head;
+    }
+
+    public void add(int key) {
+        if (contains(key)){
+            return;
+        }
+        ListNode next = new ListNode();
+        next.val = key;
+        current.next = next;
+        current = next;
+    }
+
+    public void remove(int key) {
+        if (!contains(key)){
+            return;
+        }
+        ListNode point = head;
+        while (point != null){
+            if (point.next.val == key){
+                if (point.next != null){
+                    point.next = point.next.next;
+                    ListNode start = point;
+                    while (start.next != null){
+                        start = start.next;
+                    }
+                    current = start;
+                    return;
+                }
+            }
+            point = point.next;
+        }
+    }
+
+    /** Returns true if this set contains the specified element */
+    public boolean contains(int key) {
+        ListNode point = head;
+        while (point != null){
+            if (point.val == key){
+                return true;
+            }
+            point = point.next;
+        }
+        return false;
+    }
+
+    /**
+     * 执行用时：220 ms, 在所有 Java 提交中击败了10.24%的用户
+     * 内存消耗：45 MB, 在所有 Java 提交中击败了63.48%的用户
+     */
+}
+
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * MyHashSet obj = new MyHashSet();
+ * obj.add(key);
+ * obj.remove(key);
+ * boolean param_3 = obj.contains(key);
+ */
+
+
+```
+
+### hash法
+
+为了实现哈希集合这一数据结构，有以下几个关键问题需要解决：
+
+- 哈希函数：能够将集合中任意可能的元素映射到一个固定范围的整数值，并将该元素存储到整数值对应的地址上。
+- 冲突处理：由于不同元素可能映射到相同的整数值，因此需要在整数值出现「冲突」时，需要进行冲突处理。总的来说，有以下几种策略解决冲突：
+  - 链地址法：为每个哈希值维护一个链表，并将具有相同哈希值的元素都放入这一链表当中。
+  - 开放地址法：当发现哈希值 h 处产生冲突时，根据某种策略，从 h 出发找到下一个不冲突的位置。例如，一种最简单的策略是，不断地检查 `h+1,h+2,h+3,\ldotsh+1,h+2,h+3,…` 这些整数对应的位置。
+  - 再哈希法：当发现哈希冲突后，使用另一个哈希函数产生一个新的地址。
+- 扩容：当哈希表元素过多时，冲突的概率将越来越大，而在哈希表中查询一个元素的效率也会越来越低。因此，需要开辟一块更大的空间，来缓解哈希表中发生的冲突。
+
+以上内容读者可以自行翻阅数据结构的教材，本题解不再阐述，而是直接给出一个最简单的哈希表实现。
+
+方法一：链地址法
+设哈希表的大小为 `base`，则可以设计一个简单的哈希函数：`hash(x) = x mod base`。
+
+我们开辟一个大小为 `base` 的数组，数组的每个位置是一个链表。当计算出哈希值之后，就插入到对应位置的链表当中。
+
+由于我们使用整数除法作为哈希函数，为了尽可能避免冲突，应当将 `base` 取为一个质数。在这里，我们取 `base`=769。
+
+> 为什么取769？   
+
+![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9waWMubGVldGNvZGUtY24uY29tL0ZpZ3VyZXMvNzA1LzcwNV9saW5rZWRfbGlzdC5wbmc?x-oss-process=image/format,png)
+
+**代码：**
+
+```java
+class MyHashSet {
+    private static final int BASE = 769;
+    private LinkedList[] data;
+
+    /** Initialize your data structure here. */
+    public MyHashSet() {
+        data = new LinkedList[BASE];
+        for (int i = 0; i < BASE; ++i) {
+            data[i] = new LinkedList<Integer>();
+        }
+    }
+    
+    public void add(int key) {
+        int h = hash(key);
+        Iterator<Integer> iterator = data[h].iterator();
+        while (iterator.hasNext()) {
+            Integer element = iterator.next();
+            if (element == key) {
+                return;
+            }
+        }
+        data[h].offerLast(key);
+    }
+    
+    public void remove(int key) {
+        int h = hash(key);
+        Iterator<Integer> iterator = data[h].iterator();
+        while (iterator.hasNext()) {
+            Integer element = iterator.next();
+            if (element == key) {
+                data[h].remove(element);
+                return;
+            }
+        }
+    }
+    
+    /** Returns true if this set contains the specified element */
+    public boolean contains(int key) {
+        int h = hash(key);
+        Iterator<Integer> iterator = data[h].iterator();
+        while (iterator.hasNext()) {
+            Integer element = iterator.next();
+            if (element == key) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static int hash(int key) {
+        return key % BASE;
+    }
+}
+
+
+```
+
+**复杂度分析**
+
+时间复杂度：`O(n/b)`。其中 n 为哈希表中的元素数量，b 为链表的数量。假设哈希值是均匀分布的，则每个链表大概长度为 `n/b` 。空间复杂度：`O(n+b)`。
+
+> 作者：LeetCode-Solution
+> 链接：https://leetcode-cn.com/problems/design-hashset/solution/she-ji-ha-xi-ji-he-by-leetcode-solution-xp4t/
+> 来源：力扣（LeetCode）
+> 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+## 提交记录
+
+### 提交记录一
+
+> 执行结果：执行出错
+
+执行出错信息：
+
+```
+java.lang.NullPointerException
+  at line 26, MyHashSet.remove
+  at line 67, __Driver__.__helperSelectMethod__
+  at line 90, __Driver__.__helper__
+  at line 111, __Driver__.main
+最后执行的输入：
+["MyHashSet","add","remove","add","remove","remove","add","add","add","add","remove"]
+[[],[9],[19],[14],[19],[9],[0],[3],[4],[0],[9]]
+```
+
+提交的代码：
+
+```java
+class MyHashSet {
+
+    private ListNode head;
+    private ListNode current;
+
+    /** Initialize your data structure here. */
+    public MyHashSet() {
+         head = new ListNode();
+        head.val = -1;
+        current = head;
+    }
+    
+    public void add(int key) {
+        if (contains(key)){
+            return;
+        }
+        ListNode next = new ListNode();
+        next.val = key;
+        current.next = next;
+        current = next;
+    }
+    
+    public void remove(int key) {
+        ListNode point = head;
+        while (point != null){
+            if (point.next.val == key){
+                if (point.next != null){
+                    point.next = point.next.next;
+                    return;
+                }
+            }
+            point = point.next;
+        }
+    }
+    
+    /** Returns true if this set contains the specified element */
+    public boolean contains(int key) {
+        ListNode point = head;
+        while (point != null){
+            if (point.val == key){
+                return true;
+            }
+            point = point.next;
+        }
+        return false;
+    }
+}
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * MyHashSet obj = new MyHashSet();
+ * obj.add(key);
+ * obj.remove(key);
+ * boolean param_3 = obj.contains(key);
+ */
+```
+
+### 提交记录二
+
+>执行结果：解答错误
+
+执行出错信息：
+
+```
+最后执行的输入：
+["MyHashSet","add","add","contains","contains","add","contains","remove","contains","add","contains"]
+[[],[1],[2],[1],[3],[2],[2],[2],[2],[1000000],[1000000]]
+```
+
+提交的代码：
+
+```java
+class MyHashSet {
+
+    private ListNode head;
+    private ListNode current;
+
+    /** Initialize your data structure here. */
+    public MyHashSet() {
+         head = new ListNode();
+        head.val = -1;
+        current = head;
+    }
+    
+    public void add(int key) {
+        if (contains(key)){
+            return;
+        }
+        ListNode next = new ListNode();
+        next.val = key;
+        current.next = next;
+        current = next;
+    }
+    
+    public void remove(int key) {
+        if(!contains(key)){
+            return;
+        }
+        ListNode point = head;
+        while (point != null){
+            if (point.next.val == key){
+                if (point.next != null){
+                    point.next = point.next.next;
+                    return;
+                }
+            }
+            point = point.next;
+        }
+    }
+    
+    /** Returns true if this set contains the specified element */
+    public boolean contains(int key) {
+        ListNode point = head;
+        while (point != null){
+            if (point.val == key){
+                return true;
+            }
+            point = point.next;
+        }
+        return false;
+    }
+}
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * MyHashSet obj = new MyHashSet();
+ * obj.add(key);
+ * obj.remove(key);
+ * boolean param_3 = obj.contains(key);
+ */
+```
+
+
+
+### 提交记录三
+
+> 执行结果：解答错误
+
+执行出错信息：
+
+```
+最后执行的输入：
+["MyHashSet","add","contains","add","contains","remove","add","contains","add","add","add","add","add","add","contains","add","add","add","contains","remove","contains","contains","add","remove","add","remove","add","remove","add","contains","add","add","contains","add","add","add","add","remove","contains","add","contains","add","add","add","remove","remove","add","contains","add","add","contains","remove","add","contains","add","remove","remove","add","contains","add","contains","contains","add","add","remove","remove","add","remove","add","add","add","add","add","add","remove","remove","add","remove","add","add","add","add","contains","add","remove","remove","remove","remove","add","add","add","add","contains","add","add","add","add","add","add","add","add"]
+[[],[58],[0],[14],[58],[91],[6],[58],[66],[51],[16],[40],[52],[48],[40],[42],[85],[36],[16],[0],[43],[6],[3],[25],[99],[66],[60],[58],[97],[3],[35],[65],[40],[41],[10],[37],[65],[37],[40],[28],[60],[30],[63],[76],[90],[3],[43],[81],[61],[39],[75],[10],[55],[92],[71],[2],[20],[7],[55],[88],[39],[97],[44],[1],[51],[89],[37],[19],[3],[13],[11],[68],[18],[17],[41],[87],[48],[43],[68],[80],[35],[2],[17],[71],[90],[83],[42],[88],[16],[37],[33],[66],[59],[6],[79],[77],[14],[69],[36],[21],[40]]
+```
+
+提交的代码：
+
+```java
+class MyHashSet {
+
+    private ListNode head;
+    private ListNode current;
+
+    /** Initialize your data structure here. */
+    public MyHashSet() {
+         head = new ListNode();
+        head.val = -1;
+        current = head;
+    }
+    
+    public void add(int key) {
+        if (contains(key)){
+            return;
+        }
+        ListNode next = new ListNode();
+        next.val = key;
+        current.next = next;
+        current = next;
+    }
+    
+    public void remove(int key) {
+        if (!contains(key)){
+            return;
+        }
+        ListNode point = head;
+        while (point != null){
+            if (point.next.val == key){
+                if (point.next != null){
+                    point.next = point.next.next;
+                    current = point;
+                    return;
+                }
+            }
+            point = point.next;
+        }
+    }
+    
+    /** Returns true if this set contains the specified element */
+    public boolean contains(int key) {
+        ListNode point = head;
+        while (point != null){
+            if (point.val == key){
+                return true;
+            }
+            point = point.next;
+        }
+        return false;
+    }
+}
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * MyHashSet obj = new MyHashSet();
+ * obj.add(key);
+ * obj.remove(key);
+ * boolean param_3 = obj.contains(key);
+ */
+```
+
+
+
