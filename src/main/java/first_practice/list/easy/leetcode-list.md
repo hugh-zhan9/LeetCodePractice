@@ -6,23 +6,23 @@
 
 将两个升序链表合并为一个新的 升序链表 并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
 
-示例 1：
+**示例 1：**
 ![](https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg)
 
 >输入：`l1 = [1,2,4], l2 = [1,3,4]`
 >输出：`[1,1,2,3,4,4]`
 
-示例 2：
+**示例 2：**
 
 > 输入：`l1 = [], l2 = []`
 > 输出：`[]`
 
-示例 3：
+**示例 3：**
 
 > 输入：`l1 = [], l2 = [0]`
 > 输出：`[0]`
 
-提示：
+**提示：**
 
 - 两个链表的节点数目范围是 `[0, 50]`
 - `-100 <= Node.val <= 100`
@@ -112,19 +112,24 @@ public class MergeTwoLists_21 {
 
 存在一个按升序排列的链表，给你这个链表的头节点 head ，请你删除所有重复的元素，使每个元素只出现一次 。
 返回同样按升序排列的结果链表。
-示例 1：
 
->![](https://assets.leetcode.com/uploads/2021/01/04/list1.jpg)
+**示例 1：**
+
+![](https://assets.leetcode.com/uploads/2021/01/04/list1.jpg)
+
+>
 >输入：`head = [1,1,2]`
 >输出：`[1,2]`
 
-示例 2：
+**示例 2：**
 
->![](https://assets.leetcode.com/uploads/2021/01/04/list2.jpg)
+![](https://assets.leetcode.com/uploads/2021/01/04/list2.jpg)
+
+>
 >输入：`head = [1,1,2,3,3]`
 >输出：`[1,2,3]`
 
-提示：
+**提示：**
 
 - 链表中节点数目在范围 [0, 300] 内
 - -100 <= Node.val <= 100
@@ -180,32 +185,41 @@ public class MergeTwoLists_21 {
 注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
 如果链表中存在环，则返回 true 。 否则，返回 false 。
 
-进阶：
-你能用 O(1)（即，常量）内存解决此问题吗？
+进阶：你能用 `O(1)`（即，常量）内存解决此问题吗？
 
-示例 1：
->![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png)
- 输入：head = [3,2,0,-4]，pos = 1
+**示例 1：**
+
+![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist.png)
+
+> 输入：head = [3,2,0,-4]，pos = 1
  输出：true
  解释：链表中有一个环，其尾部连接到第二个节点。
 
-示例 2：
->![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png)
- 输入：head = [1,2]，pos = 0
+**示例 2：**
+
+![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png)
+
+> 输入：head = [1,2]，pos = 0
  输出：true
  解释：链表中有一个环，其尾部连接到第一个节点。
 
-示例 3：
->![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png)
- 输入：head = [1]，pos = -1
+**示例 3：**
+
+![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png)
+
+> 输入：head = [1]，pos = -1
  输出：false
  解释：链表中没有环。
 
 
-提示：
+
+**提示：**
+
 - 链表中节点的数目范围是 [0, 104]
 - -105 <= Node.val <= 105
 - pos 为 -1 或者链表中的一个 有效索引 。
+
+
 
 > 来源：力扣（LeetCode）
 > 链接：https://leetcode-cn.com/problems/linked-list-cycle
@@ -213,7 +227,7 @@ public class MergeTwoLists_21 {
 
 ## 题解
 
-https://leetcode-cn.com/problems/linked-list-cycle/solution/yi-wen-gao-ding-chang-jian-de-lian-biao-wen-ti-h-2/
+[更多题解参考](https://leetcode-cn.com/problems/linked-list-cycle/solution/yi-wen-gao-ding-chang-jian-de-lian-biao-wen-ti-h-2/)
 
 
 ```java
@@ -295,7 +309,7 @@ public class HasCycle_141 {
 题目数据 **保证** 整个链式结构中不存在环。
 注意，函数返回结果后，链表必须 保持其原始结构 。
 
-示例 1：
+**示例 1：**
 ![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_1.png)
 
 >输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
@@ -304,23 +318,25 @@ public class HasCycle_141 {
 > 从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。
 > 在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
 
-示例 2：
+**示例 2：**
 ![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_2.png)
+
 > 输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
 > 输出：Intersected at '2'
 > 解释：相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。
 > 从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。
 > 在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。
 
-示例 3：
+**示例 3：**
 ![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_3.png)
+
 > 输入：intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
 > 输出：null
 > 解释：从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。
 > 由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。
 > 这两个链表不相交，因此返回 null 。
 
-提示：
+**提示：**
 
 - listA 中节点数目为 m
 - listB 中节点数目为 n
@@ -331,7 +347,11 @@ public class HasCycle_141 {
 - 如果 listA 和 listB 没有交点，intersectVal 为 0
 - 如果 listA 和 listB 有交点，intersectVal == listA[skipA + 1] == listB[skipB + 1]
 
+
+
 进阶：你能否设计一个时间复杂度 O(n) 、仅用 O(1) 内存的解决方案？
+
+
 
 > 来源：力扣（LeetCode）
 > 链接：https://leetcode-cn.com/problems/intersection-of-two-linked-lists
@@ -404,26 +424,26 @@ public class GetIntersectionNode_160 {
 
 给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。
 
-示例 1：
+**示例 1：**
 
-> ![](https://assets.leetcode.com/uploads/2021/03/06/removelinked-list.jpg)
->
+![](https://assets.leetcode.com/uploads/2021/03/06/removelinked-list.jpg)
+
 > 输入：head = [1,2,6,3,4,5,6], val = 6
-> 输出：[1,2,3,4,5]
+>输出：[1,2,3,4,5]
 
-示例 2：
+**示例 2：**
 
 > 输入：head = [], val = 1
 > 输出：[]
 
-示例 3：
+**示例 3：**
 
 > 输入：head = [7,7,7,7], val = 7
 > 输出：[]
 
 
 
-提示：
+**提示：**
 
 - 列表中的节点数目在范围 [0, 104] 内
 - 1 <= Node.val <= 50
@@ -563,20 +583,20 @@ public class RemoveElements_203 {
 
 ![](https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg)
 
->输入：head = [1,2,3,4,5]
->输出：[5,4,3,2,1]
+>输入：`head = [1,2,3,4,5]`
+>输出：`[5,4,3,2,1]`
 
 **示例 2：**
 
 ![](https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg)
 
->输入：head = [1,2]
->输出：[2,1]
+>输入：`head = [1,2]`
+>输出：`[2,1]`
 
 **示例 3：**
 
->输入：head = []
->输出：[]
+>输入：`head = []`
+>输出：`[]`
 
 
 
@@ -680,21 +700,22 @@ public class ReverseList_206 {
 
 示例 1：
 ![](https://assets.leetcode.com/uploads/2021/03/03/pal1linked-list.jpg)
->输入：head = [1,2,2,1]
->输出：true
+>输入：`head = [1,2,2,1]`
+>输出：`true`
 
 示例 2：
 ![](https://assets.leetcode.com/uploads/2021/03/03/pal2linked-list.jpg)
->输入：head = [1,2]
->输出：false
+
+>输入：`head = [1,2]`
+>输出：`false`
 
 
 提示：
-- 链表中节点数目在范围[1, 105] 内
-- 0 <= Node.val <= 9
+- 链表中节点数目在范围 `[1, 105]` 内
+- `0 <= Node.val <= 9`
 
 
-进阶：你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
+进阶：你能否用 `O(n)` 时间复杂度和 `O(1)` 空间复杂度解决此题？
 
 > 来源：力扣（LeetCode）
 > 链接：https://leetcode-cn.com/problems/palindrome-linked-list
@@ -861,16 +882,19 @@ public class IsPalindrome_234 {
 > 难度：简单
 ## 描述
 请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点。传入函数的唯一参数为 要被删除的节点 。
-现有一个链表 -- head = [4,5,1,9]，它可以表示为:
-![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/01/19
-示例 1：
->输入：head = [4,5,1,9], node = 5
->输出：[4,1,9]
+现有一个链表 -- head = [4,5,1,9]，它可以表示为：
+
+![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/01/19)
+
+**示例 1：**
+
+>输入：`head = [4,5,1,9]`, `node = 5`
+>输出：`[4,1,9]`
 >解释：给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -> 1 -> 9.
 
 示例 2：
->输入：head = [4,5,1,9], node = 1
->输出：[4,5,9]
+>输入：`head = [4,5,1,9]`, `node = 1`
+>输出：`[4,5,9]`
 >解释：给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -> 5 -> 9.
 
 提示：
@@ -917,28 +941,36 @@ public class DeleteNode_237 {
 - `bool contains(key)` 返回哈希集合中是否存在这个值 key 。
 - `void remove(key)` 将给定值 key 从哈希集合中删除。如果哈希集合中没有这个值，什么也不做。
 
-示例：
+**示例：**
+
 >输入：
-> ["MyHashSet", "add", "add", "contains", "contains", "add", "contains", "remove", "contains"]
-> [[], [1], [2], [1], [3], [2], [2], [2], [2]]
-> 输出：
-> [null, null, null, true, false, null, true, null, false]
+>`["MyHashSet", "add", "add", "contains", "contains", "add", "contains", "remove", "contains"]`
+>`[[], [1], [2], [1], [3], [2], [2], [2], [2]]`
+>输出：
+>`[null, null, null, true, false, null, true, null, false]`
+>
+>解释：
+>
+>```java
+>MyHashSet myHashSet = new MyHashSet();
+>myHashSet.add(1);      // set = [1]
+>myHashSet.add(2);      // set = [1, 2]
+>myHashSet.contains(1); // 返回 True
+>myHashSet.contains(3); // 返回 False ，（未找到）
+>myHashSet.add(2);      // set = [1, 2]
+>myHashSet.contains(2); // 返回 True
+>myHashSet.remove(2);   // set = [1]
+>myHashSet.contains(2); // 返回 False ，（已移除）
+>```
 
-> 解释：
-> MyHashSet myHashSet = new MyHashSet();
-> myHashSet.add(1);      // set = [1]
-> myHashSet.add(2);      // set = [1, 2]
-> myHashSet.contains(1); // 返回 True
-> myHashSet.contains(3); // 返回 False ，（未找到）
-> myHashSet.add(2);      // set = [1, 2]
-> myHashSet.contains(2); // 返回 True
-> myHashSet.remove(2);   // set = [1]
-> myHashSet.contains(2); // 返回 False ，（已移除）
 
 
-提示：
+**提示：**
+
 - 0 <= key <= 106
 - 最多调用 104 次 add、remove 和 contains 。
+
+
 
 进阶：你可以不使用内建的哈希集合库解决此问题吗？
 
@@ -958,7 +990,7 @@ public class MyHashSet_705 {
     private ListNode head;
     private ListNode current;
 
-    /** 暴力实现，哭了。。。好多边界条件没考虑到 */
+    /** 暴力实现，哭了。。。好多边界条件没考虑到。可以参看提交记录 */
 
     /** Initialize your data structure here. */
     public MyHashSet_705() {
@@ -1035,13 +1067,14 @@ public class MyHashSet_705 {
 - 哈希函数：能够将集合中任意可能的元素映射到一个固定范围的整数值，并将该元素存储到整数值对应的地址上。
 - 冲突处理：由于不同元素可能映射到相同的整数值，因此需要在整数值出现「冲突」时，需要进行冲突处理。总的来说，有以下几种策略解决冲突：
   - 链地址法：为每个哈希值维护一个链表，并将具有相同哈希值的元素都放入这一链表当中。
-  - 开放地址法：当发现哈希值 h 处产生冲突时，根据某种策略，从 h 出发找到下一个不冲突的位置。例如，一种最简单的策略是，不断地检查 `h+1,h+2,h+3,\ldotsh+1,h+2,h+3,…` 这些整数对应的位置。
+  - 开放地址法：当发现哈希值 h 处产生冲突时，根据某种策略，从 h 出发找到下一个不冲突的位置。例如，一种最简单的策略是，不断地检查 `h+1, h+2, h+3, …` 这些整数对应的位置。
   - 再哈希法：当发现哈希冲突后，使用另一个哈希函数产生一个新的地址。
 - 扩容：当哈希表元素过多时，冲突的概率将越来越大，而在哈希表中查询一个元素的效率也会越来越低。因此，需要开辟一块更大的空间，来缓解哈希表中发生的冲突。
 
 以上内容读者可以自行翻阅数据结构的教材，本题解不再阐述，而是直接给出一个最简单的哈希表实现。
 
-方法一：链地址法
+**方法一：链地址法**
+
 设哈希表的大小为 `base`，则可以设计一个简单的哈希函数：`hash(x) = x mod base`。
 
 我们开辟一个大小为 `base` 的数组，数组的每个位置是一个链表。当计算出哈希值之后，就插入到对应位置的链表当中。
@@ -1353,5 +1386,241 @@ class MyHashSet {
  */
 ```
 
+# 706. 设计哈希映射
 
+> 难度：简单
+
+## 描述
+
+不使用任何内建的哈希表库设计一个哈希映射（HashMap）。
+
+实现 MyHashMap 类：
+
+- `MyHashMap()` 用空映射初始化对象
+- `void put(int key, int value)` 向 HashMap 插入一个键值对 (key, value) 。如果 key 已经存在于映射中，则更新其对应的值 value 。
+- `int get(int key)` 返回特定的 key 所映射的 value ；如果映射中不包含 key 的映射，返回 -1 。
+- `void remove(key)` 如果映射中存在 key 的映射，则移除 key 和它所对应的 value 。
+
+**示例：**
+
+> 输入：
+> `["MyHashMap", "put", "put", "get", "get", "put", "get", "remove", "get"]`
+> `[[], [1, 1], [2, 2], [1], [3], [2, 1], [2], [2], [2]]`
+>
+> 输出：`[null, null, null, 1, -1, null, 1, null, -1]`
+>
+> 解释：
+>
+> ```java
+> MyHashMap myHashMap = new MyHashMap();
+> myHashMap.put(1, 1); // myHashMap 现在为 [[1,1]]
+> myHashMap.put(2, 2); // myHashMap 现在为 [[1,1], [2,2]]
+> myHashMap.get(1);    // 返回 1 ，myHashMap 现在为 [[1,1], [2,2]]
+> myHashMap.get(3);    // 返回 -1（未找到），myHashMap 现在为 [[1,1], [2,2]]
+> myHashMap.put(2, 1); // myHashMap 现在为 [[1,1], [2,1]]（更新已有的值）
+> myHashMap.get(2);    // 返回 1 ，myHashMap 现在为 [[1,1], [2,1]]
+> myHashMap.remove(2); // 删除键为 2 的数据，myHashMap 现在为 [[1,1]]
+> myHashMap.get(2);    // 返回 -1（未找到），myHashMap 现在为 [[1,1]]
+> ```
+
+**提示：**
+
+- `0 <= key, value <= 106`
+- 最多调用 104 次 put、get 和 remove 方法
+
+
+进阶：你能否不使用内置的 HashMap 库解决此问题？
+
+> 来源：力扣（LeetCode）
+> 链接：https://leetcode-cn.com/problems/design-hashmap
+> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+# 876. 链表的中间节点
+
+> 难度：简单
+
+## 描述
+
+给定一个头结点为 head 的非空单链表，返回链表的中间结点。如果有两个中间结点，则返回第二个中间结点。
+
+**示例 1：**
+
+> 输入：[1,2,3,4,5]
+> 输出：此列表中的结点 3 (序列化形式：[3,4,5])
+> 返回的结点值为 3 。 (测评系统对该结点序列化表述是 [3,4,5])。
+> 注意，我们返回了一个 ListNode 类型的对象 ans，这样：
+> ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, 以及 ans.next.next.next = NULL.
+
+**示例 2：**
+
+> 输入：[1,2,3,4,5,6]
+> 输出：此列表中的结点 4 (序列化形式：[4,5,6])
+> 由于该列表有两个中间结点，值分别为 3 和 4，我们返回第二个结点。
+
+**提示：**
+
+- 给定链表的结点数介于 1 和 100 之间。
+
+
+
+> 来源：力扣（LeetCode）
+> 链接：https://leetcode-cn.com/problems/middle-of-the-linked-list
+> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+## 题解
+
+```java
+public class MiddleNode_876 {
+
+    /** 双指针解法，时间复杂度O(n).空间复杂度O(1) */
+    public ListNode middleNode(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast.next != null && fast.next.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
+    /**
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：35.8 MB, 在所有 Java 提交中击败了53.76%的用户
+     */
+
+    /** 双指针优化 */
+    public ListNode middleNode2(ListNode head) {
+        ListNode slow = head, fast = head;
+        // 思考一下判断条件到底是怎么样的
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+
+    /** 数组法，时间复杂度O(n)，空间复杂度O(n) */
+    public ListNode middleNode3(ListNode head) {
+        ListNode[] A = new ListNode[100];
+        int t = 0;
+        while (head != null) {
+            A[t++] = head;
+            head = head.next;
+        }
+        return A[t / 2];
+    }
+
+    /** 对数组法进行优化，省略数组。时间复杂度O(n)，空间复杂度O(1) */
+    public ListNode middleNode4(ListNode head) {
+        int n = 0;
+        ListNode cur = head;
+        while (cur != null) {
+            ++n;
+            cur = cur.next;
+        }
+        int k = 0;
+        cur = head;
+        while (k < n / 2) {
+            ++k;
+            cur = cur.next;
+        }
+        return cur;
+    }
+
+}
+```
+
+
+
+# 1290. 二进制链表转整数
+
+> 难度：简单
+## 描述
+给你一个单链表的引用结点 head。链表中每个结点的值不是 0 就是 1。
+已知此链表是一个整数数字的二进制表示形式。请你返回该链表所表示数字的 十进制值 。
+
+**示例 1：**
+![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/12/15/graph-1.png)
+
+> 输入：head = [1,0,1]
+> 输出：5
+> 解释：二进制数 (101) 转化为十进制数 (5)
+
+**示例 2：**
+
+> 输入：head = [0]
+> 输出：0
+
+**示例 3：**
+
+> 输入：head = [1]
+> 输出：1
+
+**示例 4：**
+
+> 输入：head = [1,0,0,1,0,0,1,1,1,0,0,0,0,0,0]
+> 输出：18880
+
+**示例 5：**
+
+> 输入：head = [0,0]
+> 输出：0
+
+**提示：**
+
+- 链表不为空。
+- 链表的结点总数不超过 30。
+- 每个结点的值不是 0 就是 1。
+
+
+
+> 来源：力扣（LeetCode）
+> 链接：https://leetcode-cn.com/problems/convert-binary-number-in-a-linked-list-to-integer
+> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+## 题解
+```java
+public class GetDecimalValue_1290 {
+
+    /** 直接计算 */
+    public int getDecimalValue(ListNode head) {
+        ListNode cur = head;
+        int size = 0;
+        int result = 0;
+        while (cur.next != null){
+            size++;
+            cur = cur.next;
+        }
+        cur = head;
+        for (int i=size; i>=0; i--){
+            result = result + (int) (cur.val*Math.pow(2,i));
+            cur = cur.next;
+        }
+        System.out.println(result);
+        return result;
+    }
+
+    /**
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：35.9 MB, 在所有 Java 提交中击败了52.94%的用户
+     */
+
+    /** 题解中简化的写法 */
+    public int getDecimalValue2(ListNode head) {
+        ListNode curNode = head;
+        int ans = 0;
+        while (curNode != null) {
+            ans = ans * 2 + curNode.val;
+            curNode = curNode.next;
+        }
+        return ans;
+    }
+
+    // [更多题解参考](https://leetcode-cn.com/problems/convert-binary-number-in-a-linked-list-to-integer/solution/4chong-fang-fa-zhi-jie-bian-li-di-gui-zhan-arrayli/)
+}
+
+```
+
+[更多题解参考](https://leetcode-cn.com/problems/convert-binary-number-in-a-linked-list-to-integer/solution/4chong-fang-fa-zhi-jie-bian-li-di-gui-zhan-arrayli/)
 
