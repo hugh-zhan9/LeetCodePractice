@@ -1535,6 +1535,8 @@ public class MyHashMap_706 {
  * obj.remove(key);
  */
 ```
+[更多题解参考](https://leetcode-cn.com/problems/design-hashmap/solution/)
+
 
 # 876. 链表的中间节点
 

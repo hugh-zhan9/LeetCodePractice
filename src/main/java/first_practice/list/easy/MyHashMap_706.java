@@ -138,6 +138,14 @@ public class MyHashMap_706 {
      * 执行用时：18 ms, 在所有 Java 提交中击败了79.91%的用户
      * 内存消耗：44.4 MB, 在所有 Java 提交中击败了46.56%的用户
      */
+
+    /**
+     * 时间复杂度：O( b/n)。其中 n 为哈希表中的元素数量，b 为链表的数量。假设哈希值是均匀分布的，则每个链表大概长度为 n/b
+     * 空间复杂度：O(n+b)。
+     *
+     * [更多题解参考](https://leetcode-cn.com/problems/design-hashmap/solution/)
+     */
+
 }
 
 /**
