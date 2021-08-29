@@ -24,7 +24,7 @@ public class ReversePrint_06 {
 
     /** 暴力解 */
 
-
+    /** 翻转链表 */
     public int[] reversePrint_06(ListNode head) {
         ListNode prev = null;
         ListNode current = head;
