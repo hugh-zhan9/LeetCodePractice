@@ -23,7 +23,48 @@ package first_practice.list.easy.剑指Offer;
  * @since 2021/9/1 11:05
  */
 public class MergeTwoLists_25 {
+
+    /** 迭代 */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        return new ListNode(1);
+        ListNode header = new ListNode(-1);
+        ListNode curr = header;
+        while (l1 != null && l2 != null){
+            if (l1.val<l2.val){
+                curr.next = l1;
+                l1 = l1.next;
+            }else {
+                curr.next = l2;
+                l2 = l2.next;
+            }
+            curr = curr.next;
+        }
+        curr.next = l1==null ? l2 : l1;
+        return header.next;
     }
+
+    /**
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：38.6 MB, 在所有 Java 提交中击败了35.02%的用户
+     */
+
+    /** 递归 */
+    public ListNode mergeTwoLists2(ListNode l1, ListNode l2){
+        if (l2 == null){
+            return l1;
+        }else if (l1 == null){
+            return l2;
+        }else if(l1.val < l2.val){
+            l1.next = mergeTwoLists2(l1.next,l2);
+            return l1;
+        }else {
+            l2.next = mergeTwoLists2(l1,l2.next);
+            return l2;
+        }
+    }
+
+    /**
+     * 执行用时：1 ms, 在所有 Java 提交中击败了66.71%的用户
+     * 内存消耗：38.6 MB, 在所有 Java 提交中击败了44.14%的用户
+     */
+
 }
