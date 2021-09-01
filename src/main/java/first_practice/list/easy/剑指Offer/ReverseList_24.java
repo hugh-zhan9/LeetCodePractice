@@ -22,7 +22,7 @@ package first_practice.list.easy.剑指Offer;
  * @description
  * @since 2021/9/1 10:01
  */
-public class reverseList_24 {
+public class ReverseList_24 {
 
     /** 迭代 */
     public ListNode reverseList(ListNode head) {
