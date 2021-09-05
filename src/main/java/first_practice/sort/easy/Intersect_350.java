@@ -29,7 +29,6 @@ package first_practice.sort.easy;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -39,6 +38,9 @@ import java.util.Map;
  */
 public class Intersect_350 {
 
+    /**
+     * hash法，存储长度最小数组中元素出现的个数
+     */
     public int[] intersect(int[] nums1, int[] nums2) {
         if (nums1.length>nums2.length){
             intersect(nums2,nums1);
@@ -48,6 +50,7 @@ public class Intersect_350 {
            int count = map.getOrDefault(nums1[i],0)+1;
            map.put(nums1[i],count);
         }
+        // 重复元素的数组长度不会超过最短数组的长度
         int[] array = new int[nums1.length];
         int index = 0;
         for (int j=0; j<nums2.length; j++){
@@ -69,4 +72,13 @@ public class Intersect_350 {
      * 执行用时：3 ms, 在所有 Java 提交中击败了53.41%的用户
      * 内存消耗：38.5 MB, 在所有 Java 提交中击败了69.73%的用户
      */
+
+
+    /** 排序+双指针 实现 */
+    public int[] intersect2(int[] nums1, int[] nums2){
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+
+    }
+
 }
