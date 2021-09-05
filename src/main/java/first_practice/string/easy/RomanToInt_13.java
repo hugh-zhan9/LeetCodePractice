@@ -1,4 +1,10 @@
+package first_practice.string.easy;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class RomanToInt_13 {
+
     Map<Character, Integer> symbolValues = new HashMap<Character, Integer>() {{
         put('I', 1);
         put('V', 5);
