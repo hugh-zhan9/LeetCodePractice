@@ -40,6 +40,7 @@ public class Intersect_350 {
 
     /**
      * hash法，存储长度最小数组中元素出现的个数
+     * 时间复杂度O(m+n)，空间复杂度O(min(m,n))
      */
     public int[] intersect(int[] nums1, int[] nums2) {
         if (nums1.length>nums2.length){
@@ -74,11 +75,44 @@ public class Intersect_350 {
      */
 
 
-    /** 排序+双指针 实现 */
+    /** 排序+双指针 实现
+     *
+     * 时间复杂度 O(mlogm+nlogn)，其中 m 和 n 分别是两个数组的长度。
+     * 对两个数组进行排序的时间复杂度是 O(mlogm+nlogn)，遍历两个数组的时间复杂度是 O(m+n)，因此总时间复杂度是O(mlogm+nlogn)。
+     *
+     * 空间复杂度：O(min(m,n))，其中 m 和 n 分别是两个数组的长度。
+     * 为返回值创建一个数组 intersection，其长度为较短的数组的长度。
+     */
     public int[] intersect2(int[] nums1, int[] nums2){
+        if (nums1.length>nums2.length){
+            intersect(nums2,nums1);
+        }
         Arrays.sort(nums1);
         Arrays.sort(nums2);
-
+        int i=0, j=0, x=0;
+        int[] array = new int[nums1.length];
+        while (i<nums1.length && j<nums2.length){
+            if (nums1[i]<nums2[j]){
+                i++;
+            }else if (nums1[i]>nums2[j]){
+                j++;
+            }else {
+                array[x] = nums1[i];
+                x++; i++;j++;
+            }
+        }
+        return Arrays.copyOf(array,x);
     }
 
+    /**
+     * 执行用时：1 ms, 在所有 Java 提交中击败了99.97%的用户
+     * 内存消耗：38.6 MB, 在所有 Java 提交中击败了51.31%的用户
+     */
+
+
+    /**
+     * 如果nums2的元素存储在磁盘上，磁盘内存是有限的，并且你不能一次加载所有的元素到内存中。
+     * 那么就无法高效地对 nums2 进行排序，因此推荐使用方法一而不是方法二。
+     * 在方法一中，nums2 只关系到查询操作，因此每次读取 nums2 中的一部分数据，并进行处理即可。
+     */
 }
