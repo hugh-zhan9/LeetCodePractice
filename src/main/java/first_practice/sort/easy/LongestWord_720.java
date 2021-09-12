@@ -75,7 +75,7 @@ public class LongestWord_720 {
 
 
 
-    /** 前缀树 + 深度优先搜索
+    /** 前缀树 + 深度优先搜索 题解链接：https://leetcode-cn.com/problems/longest-word-in-dictionary/solution/ci-dian-zhong-zui-chang-de-dan-ci-by-leetcode/
      *
      * 由于涉及到字符串的前缀，通常可以使用 trie（前缀树）来解决。
      *
