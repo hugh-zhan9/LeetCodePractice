@@ -1,6 +1,9 @@
+package first_practice.sort.easy;
+
 public class RelativeSortArray_1122 {
 
 
+    /** 计数排序 */
     public int[] relativeSortArray(int[] arr1, int[] arr2) {
         int upper = 0;
         for (int x : arr1) {
@@ -25,6 +28,11 @@ public class RelativeSortArray_1122 {
         }
         return ans;
     }
+
+    /**
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：38.1 MB, 在所有 Java 提交中击败了92.12%的用户
+     */
 
 
 }
