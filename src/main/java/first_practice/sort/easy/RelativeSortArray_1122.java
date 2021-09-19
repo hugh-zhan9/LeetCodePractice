@@ -1,5 +1,6 @@
 public class RelativeSortArray_1122 {
 
+
     public int[] relativeSortArray(int[] arr1, int[] arr2) {
         int upper = 0;
         for (int x : arr1) {
@@ -24,5 +25,6 @@ public class RelativeSortArray_1122 {
         }
         return ans;
     }
+
 
 }
