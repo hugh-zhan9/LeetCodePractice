@@ -51,6 +51,11 @@ public class RelativeSortArray_1122 {
         return arr1;
     }
 
+    /**
+     * 执行用时：3 ms, 在所有 Java 提交中击败了38.74%的用户
+     * 内存消耗：38.6 MB, 在所有 Java 提交中击败了20.28%的用户
+     */
+
 
     /** 双指针再排序 */
     public int[] relativeSortArray3(int[] arr1, int[] arr2) {
@@ -74,5 +79,10 @@ public class RelativeSortArray_1122 {
         Arrays.sort(arr1, left, len1);
         return arr1;
     }
+
+    /**
+     * 执行用时：3 ms, 在所有 Java 提交中击败了38.74%的用户
+     * 内存消耗：36.7 MB, 在所有 Java 提交中击败了99.92%的用户
+     */
 
 }
