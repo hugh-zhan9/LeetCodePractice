@@ -46,7 +46,20 @@ package first_practice.string.easy;
 public class IsValid_20 {
 
     public boolean isValid(String s) {
-        return false;
+        int length = s.length();
+        if (length%2==1){
+            return false;
+        }
+        int j=length-1;
+        for (int i=0; i<length; i++){
+
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        IsValid_20 test = new IsValid_20();
+        test.isValid("()[]{}");
     }
 
 }
