@@ -38,6 +38,10 @@ package first_practice.string.easy;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Stack;
+
 /**
  * @author zyk
  * @description
@@ -45,21 +49,80 @@ package first_practice.string.easy;
  */
 public class IsValid_20 {
 
+    /** 评论中的解法，思路十分巧妙的同时也完美的使用了api，虽然效率不高但是值得思考 */
     public boolean isValid(String s) {
         int length = s.length();
         if (length%2==1){
             return false;
         }
-        int j=length-1;
-        for (int i=0; i<length; i++){
-
+        int lengthMid = s.length() / 2;
+        for (int i = 0; i < lengthMid; i++) {
+            s = s.replace("()", "").replace("{}", "").replace("[]", "");
         }
-        return true;
+        return s.length() == 0;
     }
 
-    public static void main(String[] args) {
-        IsValid_20 test = new IsValid_20();
-        test.isValid("()[]{}");
+    /**
+     * 执行用时：40 ms, 在所有 Java 提交中击败了5.30%的用户
+     * 内存消耗：38.6 MB, 在所有 Java 提交中击败了6.55%的用户
+     */
+
+
+    /** 使用栈来解决对称结构的问题 */
+    public boolean isValid2(String s) {
+        int length = s.length();
+        if (length%2==1){
+            return false;
+        }
+
+        Stack<Character> stack = new Stack<>();
+        for (int i=0; i<length; i++) {
+            if (stack.size() == 0) {
+                stack.push(s.charAt(i));
+            } else if (isSym(stack.peek(), s.charAt(i))) {
+                stack.pop();
+            } else {
+                stack.push(s.charAt(i));
+            }
+        }
+        return stack.size() == 0;
     }
+
+    private boolean isSym(char c1, char c2) {
+        return (c1 == '(' && c2 == ')') || (c1 == '[' && c2 == ']') || (c1 == '{' && c2 == '}');
+    }
+
+    /**
+     * 执行用时：2 ms, 在所有 Java 提交中击败了62.07%的用户
+     * 内存消耗：36.2 MB, 在所有 Java 提交中击败了94.37%的用户
+     */
+
+
+    public boolean isValid3(String s) {
+        Deque<Character> deque = new LinkedList<>();
+        char ch;
+        for (int i = 0; i < s.length(); i++) {
+            ch = s.charAt(i);
+            //碰到左括号，就把相应的右括号入栈
+            if (ch == '(') {
+                deque.push(')');
+            }else if (ch == '{') {
+                deque.push('}');
+            }else if (ch == '[') {
+                deque.push(']');
+            } else if (deque.isEmpty() || deque.peek() != ch) {
+                return false;
+            }else {//如果是右括号判断是否和栈顶元素匹配
+                deque.pop();
+            }
+        }
+        //最后判断栈中元素是否匹配
+        return deque.isEmpty();
+    }
+
+    /**
+     * 执行用时：2 ms, 在所有 Java 提交中击败了62.07%的用户
+     * 内存消耗：36.3 MB, 在所有 Java 提交中击败了80.72%的用户
+     */
 
 }
