@@ -33,7 +33,74 @@ package first_practice.string.easy;
 public class AddBinary_67 {
 
     public String addBinary(String a, String b) {
-        return "";
+        int maxLength = Math.max(a.length(), b.length()), carry = 0;
+        int minLength = Math.min(a.length(), b.length());
+        if (a.length() < b.length()){
+            String temp = new String();
+            temp = a;
+            a = b;
+            b =temp;
+        }
+        StringBuffer result = new StringBuffer();
+        for (int i=0; i<maxLength; i++){
+            if (i<minLength){
+                if ((a.charAt(a.length()-1-i) + b.charAt(b.length()-1-i) - 2*'0' + carry) >= 2){
+                    int r = (a.charAt(a.length() - 1 - i) + b.charAt(b.length() - 1 - i) - 2 * '0' + carry)-2;
+                    result.append(r);
+                    carry = 1;
+                }else {
+                    result.append((a.charAt(a.length()-1-i) + b.charAt(b.length()-1-i) - 2*'0' + carry));
+                    carry = 0;
+                }
+            }else {
+                if ((a.charAt(a.length()-1-i) - '0' + carry) >= 2){
+                    int r = (a.charAt(a.length() - 1 - i) - '0' + carry)-2;
+                    result.append(r);
+                    carry = 1;
+                }else {
+                    result.append(a.charAt(a.length()-1-i) - '0' + carry);
+                    carry = 0;
+                }
+            }
+
+        }
+        if (carry > 0) {
+            result.append('1');
+        }
+        result.reverse();
+        return result.toString();
     }
+
+    /**
+     * 执行用时：3 ms, 在所有 Java 提交中击败了34.16%的用户
+     * 内存消耗：38.6 MB, 在所有 Java 提交中击败了16.34%的用户
+     */
+
+
+    /** 上面的思路和这里基本一致，可以把下面的解法看做是优化之后的写法 */
+    public String addBinary2(String a, String b) {
+        int maxLength = Math.max(a.length(), b.length()), carry = 0;
+        StringBuffer result = new StringBuffer();
+
+        for (int i=0; i<maxLength; i++){
+            carry += i < a.length() ? (a.charAt(a.length() - 1 - i) - '0') : 0;
+            carry += i < b.length() ? (b.charAt(b.length() - 1 - i) - '0') : 0;
+            result.append((char) (carry % 2 + '0'));
+            carry /= 2;
+        }
+        if (carry > 0) {
+            result.append('1');
+        }
+        result.reverse();
+        return result.toString();
+    }
+
+    /**
+     * 执行用时：2 ms, 在所有 Java 提交中击败了94.00%的用户
+     * 内存消耗：38.5 MB, 在所有 Java 提交中击败了26.81%的用户
+     */
+
+
+
 
 }
