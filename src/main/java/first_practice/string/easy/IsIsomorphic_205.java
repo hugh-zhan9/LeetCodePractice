@@ -63,6 +63,9 @@ public class IsIsomorphic_205 {
                     return false;
                 }
             }else {
+                if (map.containsValue(t.charAt(i))){
+                    return false;
+                }
                 map.put(s.charAt(i),t.charAt(i));
             }
         }
@@ -73,6 +76,35 @@ public class IsIsomorphic_205 {
      * 执行用时：10 ms, 在所有 Java 提交中击败了79.35%的用户
      * 内存消耗：38.3 MB, 在所有 Java 提交中击败了69.68%的用户
      */
+
+
+    /** 不知道为什么空间效率还不如上面，可能是containsValue方法的原因 */
+    public boolean isIsomorphic2(String s, String t) {
+        int length = s.length();
+        if (length != t.length()){
+            return false;
+        }
+        Map<Character, Character> map = new HashMap();
+        for (int i=0; i<length; i++){
+            if (map.containsKey(s.charAt(i))){
+                if (map.get(s.charAt(i)) != t.charAt(i) ){
+                    return false;
+                }
+            }else {
+                if (map.containsValue(t.charAt(i))){
+                    return false;
+                }
+                map.put(s.charAt(i),t.charAt(i));
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 执行用时：10 ms, 在所有 Java 提交中击败了79.35%的用户
+     * 内存消耗：38.5 MB, 在所有 Java 提交中击败了35.59%的用户
+     */
+
 
 
 
