@@ -78,6 +78,7 @@ public class IsIsomorphic_205 {
      */
 
 
+
     /** 不知道为什么空间效率还不如上面，可能是containsValue方法的原因 */
     public boolean isIsomorphic2(String s, String t) {
         int length = s.length();
@@ -108,9 +109,28 @@ public class IsIsomorphic_205 {
 
 
 
-    public static void main(String[] args) {
-        IsIsomorphic_205 test = new IsIsomorphic_205();
-        System.out.println(test.isIsomorphic("badc", "baba"));
-
+    /** 保存两个字符串之间的映射 */
+    public boolean isIsomorphic3(String s, String t) {
+        Map<Character, Character> map1 = new HashMap<>();
+        Map<Character, Character> map2 = new HashMap<>();
+        for (int i = 0, j = 0; i < s.length(); i++, j++) {
+            if (!map1.containsKey(s.charAt(i))) {
+                map1.put(s.charAt(i), t.charAt(j)); // map1保存 s[i] 到 t[j]的映射
+            }
+            if (!map2.containsKey(t.charAt(j))) {
+                map2.put(t.charAt(j), s.charAt(i)); // map2保存 t[j] 到 s[i]的映射
+            }
+            // 无法映射，返回 false
+            if (map1.get(s.charAt(i)) != t.charAt(j) || map2.get(t.charAt(j)) != s.charAt(i)) {
+                return false;
+            }
+        }
+        return true;
     }
+
+    /**
+     * 执行用时：21 ms, 在所有 Java 提交中击败了39.21%的用户
+     * 内存消耗：38.4 MB, 在所有 Java 提交中击败了48.88%的用户
+     */
+
 }
