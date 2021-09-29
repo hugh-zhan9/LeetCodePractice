@@ -65,9 +65,5 @@ public class WordPattern_290 {
      * 内存消耗：36.4 MB, 在所有 Java 提交中击败了27.88%的用户
      */
 
-    public static void main(String[] args) {
-        WordPattern_290 test = new WordPattern_290();
-        System.out.println(test.wordPattern("aaba","dog cat cat dog"));
-    }
 
 }
