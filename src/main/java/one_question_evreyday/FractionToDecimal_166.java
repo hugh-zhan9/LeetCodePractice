@@ -1,4 +1,4 @@
-package first_practice;
+package one_question_evreyday;
 
 /**
  * 给定两个整数，分别表示分数的分子 numerator 和分母 denominator，以字符串形式返回小数 。
