@@ -1,4 +1,4 @@
-package one_question_evreyday;
+package one_question_everyday;
 
 /**
  * 请你设计一个迭代器，除了支持 hasNext 和 next 操作外，还支持 peek 操作。
@@ -48,11 +48,11 @@ import java.util.Iterator;
  * @description
  * @since 2021/10/5 14:55
  */
-public class PeekingIterator_284 implements Iterator<Integer> {
+public class PeekingIterator_2021_10_05 implements Iterator<Integer> {
     private Iterator<Integer> iterator;
     private Integer nextElement;
 
-    public PeekingIterator_284(Iterator<Integer> iterator) {
+    public PeekingIterator_2021_10_05(Iterator<Integer> iterator) {
         this.iterator = iterator;
         nextElement = iterator.next();
     }

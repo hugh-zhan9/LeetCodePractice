@@ -1,4 +1,4 @@
-package one_question_evreyday;
+package one_question_everyday;
 
 /**
  * @author zyk

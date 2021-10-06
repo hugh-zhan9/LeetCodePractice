@@ -1,4 +1,4 @@
-package one_question_evreyday;
+package one_question_everyday;
 
 /**
  * 有一个密钥字符串 S ，只包含字母，数字以及 '-'（破折号）。
@@ -37,7 +37,7 @@ package one_question_evreyday;
  * @description
  * @since 2021/10/4 7:28
  */
-public class LicenseKeyFormatting_482 {
+public class LicenseKeyFormatting_2021_10_04 {
 
     public String licenseKeyFormatting(String s, int k) {
         String replace = s.replace("-", "").toUpperCase();

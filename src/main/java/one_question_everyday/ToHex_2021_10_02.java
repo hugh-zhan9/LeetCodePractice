@@ -1,4 +1,4 @@
-package one_question_evreyday;
+package one_question_everyday;
 
 /**
  * 给定一个整数，编写一个算法将这个数转换为十六进制数。对于负整数，我们通常使用补码运算方法。
@@ -32,7 +32,7 @@ package one_question_evreyday;
  * @description
  * @since 2021/10/2 22:19
  */
-public class ToHex_405 {
+public class ToHex_2021_10_02 {
 
     public String toHex(int num) {
         if (num == 0) {

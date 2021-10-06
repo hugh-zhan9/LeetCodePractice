@@ -1,4 +1,4 @@
-package one_question_evreyday;
+package one_question_everyday;
 
 /**
  * 给你一份旅游线路图，该线路图中的旅行线路用数组 paths 表示，
@@ -58,7 +58,7 @@ import java.util.Set;
  * @description
  * @since 2021/10/1 11:23
  */
-public class DestCity_1436 {
+public class DestCity_2021_10_01 {
 
     public String destCity(List<List<String>> paths) {
         Map<String,Integer> firstMap = new HashMap();

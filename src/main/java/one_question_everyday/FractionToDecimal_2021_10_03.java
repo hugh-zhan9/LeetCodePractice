@@ -1,4 +1,4 @@
-package one_question_evreyday;
+package one_question_everyday;
 
 /**
  * 给定两个整数，分别表示分数的分子 numerator 和分母 denominator，以字符串形式返回小数 。
@@ -46,7 +46,7 @@ import java.util.Map;
  * @description
  * @since 2021/10/3 20:45
  */
-public class FractionToDecimal_166 {
+public class FractionToDecimal_2021_10_03 {
 
     public String fractionToDecimal(int numerator, int denominator) {
         StringBuilder sb = new StringBuilder();

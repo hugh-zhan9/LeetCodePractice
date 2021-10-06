@@ -1,4 +1,4 @@
-package one_question_evreyday;
+package one_question_everyday;
 
 /**
  * 给定一个字符串 s 和一个整数 k，从字符串开头算起，

@@ -1,4 +1,4 @@
-package one_question_evreyday;
+package one_question_everyday;
 
 /**
  * 超级丑数 是一个正整数，并满足其所有质因数都出现在质数数组 primes 中。

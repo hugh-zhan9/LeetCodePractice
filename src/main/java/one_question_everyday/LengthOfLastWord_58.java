@@ -1,4 +1,4 @@
-package one_question_evreyday;
+package one_question_everyday;
 
 /**
  * 给你一个字符串s，由若干单词组成，单词前后用一些空格字符隔开。
