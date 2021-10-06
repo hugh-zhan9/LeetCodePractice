@@ -35,7 +35,7 @@ package one_question_everyday;
  * @description
  * @since 2021/9/21 9:07
  */
-public class LengthOfLastWord_58 {
+public class LengthOfLastWord_2021_09_21 {
 
     public int lengthOfLastWord(String s) {
         String[] array = s.split(" ");
@@ -66,11 +66,5 @@ public class LengthOfLastWord_58 {
      * 内存消耗：36.8 MB, 在所有 Java 提交中击败了29.76%的用户
      */
 
-
-    public static void main(String[] args) {
-        LengthOfLastWord_58 test = new LengthOfLastWord_58();
-        test.lengthOfLastWord2("abc d");
-
-    }
 
 }

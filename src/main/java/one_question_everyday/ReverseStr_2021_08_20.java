@@ -33,7 +33,7 @@ package one_question_everyday;
 
 // [题目链接](https://leetcode-cn.com/problems/reverse-string-ii/submissions/)
 
-public class ReverseStr_541 {
+public class ReverseStr_2021_08_20 {
 
     /** 暴力解， 时间复杂度O()*/
     public String reverseStr(String s, int k) {
@@ -98,10 +98,5 @@ public class ReverseStr_541 {
         return chars;
     }
 
-
-    public static void main(String[] args) {
-        ReverseStr_541 solution = new ReverseStr_541();
-        System.out.println(solution.reverseStr("abcdefg",2));;
-    }
 }
 

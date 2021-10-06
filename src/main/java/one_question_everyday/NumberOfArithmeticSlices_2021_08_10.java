@@ -34,16 +34,11 @@ package one_question_everyday;
  * @description 没有思路，看了下讨论和题解，需要使用动态规划，待掌握了动态规划再来尝试
  * @since 2021/8/10 11:45
  */
-public class NumberOfArithmeticSlices_413 {
+public class NumberOfArithmeticSlices_2021_08_10 {
 
     public int numberOfArithmeticSlices(int[] nums) {
         int result = 0;
         return result;
     }
 
-    public static void main(String[] args) {
-        NumberOfArithmeticSlices_413 solution = new NumberOfArithmeticSlices_413();
-        int result = solution.numberOfArithmeticSlices(new int[]{1, 2, 3, 4});
-        System.out.println(result);
-    }
 }
