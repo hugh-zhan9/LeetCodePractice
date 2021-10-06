@@ -34,6 +34,8 @@ package one_question_everyday;
  *
  */
 
+import java.util.TreeSet;
+
 /**
  * @author zyk
  * @description
@@ -68,4 +70,28 @@ public class ThirdMax_2021_10_06 {
      * 执行用时：1 ms, 在所有 Java 提交中击败了91.70%的用户
      * 内存消耗：38.3 MB, 在所有 Java 提交中击败了50.08%的用户
      */
+
+
+    /**
+     * 遍历数组，同时用一个有序集合来维护数组中前三大的数。
+     * 具体做法是每遍历一个数，就将其插入有序集合，若有序集合的大小超过 3，就删除集合中的最小元素。
+     * 这样可以保证有序集合的大小至多为 3，且遍历结束后，若有序集合的大小为 3，其最小值就是数组中第三大的数；
+     * 若有序集合的大小不足 3，那么就返回有序集合中的最大值。
+     */
+    public int thirdMax2(int[] nums) {
+        TreeSet<Integer> set = new TreeSet<>();
+        for (int num : nums) {
+            set.add(num);
+            if (set.size() > 3) {
+                set.remove(set.first());
+            }
+        }
+        return set.size() == 3 ? set.first() : set.last();
+    }
+
+    /**
+     * 执行用时：4 ms, 在所有 Java 提交中击败了42.14%的用户
+     * 内存消耗：38.3 MB, 在所有 Java 提交中击败了40.53%的用户
+     */
+
 }
