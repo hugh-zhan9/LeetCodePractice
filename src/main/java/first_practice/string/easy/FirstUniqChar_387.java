@@ -66,6 +66,7 @@ public class FirstUniqChar_387 {
         }
         int first = length;
         for (Map.Entry<Character, Integer> entry : position.entrySet()) {
+            // 找最靠前的没有重复出现过字母的下标
             if (entry.getValue() != -1 && entry.getValue() < first) {
                 first = entry.getValue();
             }
