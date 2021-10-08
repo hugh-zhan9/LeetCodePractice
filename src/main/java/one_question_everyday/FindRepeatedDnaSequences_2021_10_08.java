@@ -56,10 +56,9 @@ public class FindRepeatedDnaSequences_2021_10_08 {
      * 内存消耗：46.9 MB, 在所有 Java 提交中击败了62.70%的用户
      */
 
-    /**
-     * ArrayList 和 Map 的效率差的有点远呀
-     */
-    /** 超时 */
+    
+    
+    /** 超时，看来ArrayList 和 Map的效率差的有点远呀 */
     public List<String> findRepeatedDnaSequences2(String s) {
         List<String> element = new ArrayList<>();
         List<String> result = new ArrayList<>();
