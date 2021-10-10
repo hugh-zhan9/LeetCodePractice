@@ -82,4 +82,9 @@ public class ArrangeCoins_2021_10_10 {
         return left;
     }
 
+    /**
+     * 执行用时：1 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：35.5 MB, 在所有 Java 提交中击败了63.74%的用户
+     */
+
 }
