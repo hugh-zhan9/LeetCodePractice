@@ -72,6 +72,11 @@ public class ArrangeCoins_2021_10_10 {
     public int arrangeCoins3(int n) {
         int left = 1, right = n;
         while (left < right) {
+            // 有个小点需要注意的是
+            // mid = (left + right + 1) // 2
+            // 先加1再除以2是为了让中间值靠右，因为在后序对右边的值处理是 right = mid - 1
+            //
+            // 我觉得主要原因在于对左值的处理，这里左值的处理是 left = mid。因为正常的left+mid>>1都是向下取整，如果不加上1，left=mid会死循环
             int mid = (right - left + 1) / 2 + left;
             if ((long) mid * (mid + 1) <= (long) 2 * n) {
                 left = mid;
