@@ -1,6 +1,8 @@
 package first_practice.hash.easy;
 
-import java.util.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 编写一个算法来判断一个数 n 是不是快乐数。
@@ -28,7 +30,7 @@ import java.util.*;
  *  
  *
  * 提示：
- * 1 <= n <= 231 - 1
+ * 1 <= n <= 2^31 - 1
  *
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/happy-number
