@@ -34,7 +34,7 @@ package one_question_everyday;
  * @description 没有思路，看了下讨论和题解，需要使用动态规划，待掌握了动态规划再来尝试
  * @since 2021/8/10 11:45
  */
-public class NumberOfArithmeticSlices_2021_08_10 {
+public class Z021_08_10_NumberOfArithmeticSlices {
 
     public int numberOfArithmeticSlices(int[] nums) {
         int result = 0;

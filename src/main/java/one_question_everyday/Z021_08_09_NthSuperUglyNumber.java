@@ -39,6 +39,6 @@ package one_question_everyday;
  * @description 看不懂题意... 看了评论，可能需要先去了解前面两道题目
  * @since 2021/8/9 10:30
  */
-public class NthSuperUglyNumber_2021_08_09 {
+public class Z021_08_09_NthSuperUglyNumber {
 
 }

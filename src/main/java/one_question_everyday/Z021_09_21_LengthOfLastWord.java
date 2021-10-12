@@ -35,7 +35,7 @@ package one_question_everyday;
  * @description
  * @since 2021/9/21 9:07
  */
-public class LengthOfLastWord_2021_09_21 {
+public class Z021_09_21_LengthOfLastWord {
 
     public int lengthOfLastWord(String s) {
         String[] array = s.split(" ");

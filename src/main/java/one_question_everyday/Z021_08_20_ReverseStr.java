@@ -33,7 +33,7 @@ package one_question_everyday;
 
 // [题目链接](https://leetcode-cn.com/problems/reverse-string-ii/submissions/)
 
-public class ReverseStr_2021_08_20 {
+public class Z021_08_20_ReverseStr {
 
     /** 暴力解， 时间复杂度O()*/
     public String reverseStr(String s, int k) {
