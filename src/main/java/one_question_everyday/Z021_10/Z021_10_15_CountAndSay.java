@@ -51,7 +51,7 @@ package one_question_everyday.Z021_10;
  * @description
  * @since 2021/10/15 8:47
  */
-public class Z020_10_15_CountAndSay {
+public class Z021_10_15_CountAndSay {
 
     public String countAndSay(int n) {
         StringBuffer ans = new StringBuffer();
