@@ -55,4 +55,23 @@ public class FindDisappearedNumbers_448 {
      * 执行用时：22 ms, 在所有 Java 提交中击败了6.30%的用户
      * 内存消耗：47 MB, 在所有 Java 提交中击败了87.91%的用户
      */
+
+
+    /** 使用原地哈希算法 */
+    public List<Integer> findDisappearedNumbers2(int[] nums) {
+        int n = nums.length;
+        for (int num : nums) {
+            int x = (num - 1) % n;
+            nums[x] += n;
+        }
+        List<Integer> ret = new ArrayList<Integer>();
+        for (int i = 0; i < n; i++) {
+            if (nums[i] <= n) {
+                ret.add(i + 1);
+            }
+        }
+        return ret;
+    }
+
+
 }
