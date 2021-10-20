@@ -34,7 +34,10 @@ package one_question_everyday.Z021_10;
  */
 public class Z021_10_20_MinMoves {
 
-    /** 思路：每次找到最大的数，然后让其他几个数+1，直到所有数相等 */
+    /**
+     * 思路：每次找到最大的数，然后让其他几个数+1，直到所有数相等
+     * 没有写完，实现过于复杂。。。好像不太对
+     */
     public int minMoves(int[] nums) {
         int count = 0;
         int length = nums.length;
@@ -57,5 +60,28 @@ public class Z021_10_20_MinMoves {
         }
         return true;
     }
+    
+    
+    
+
+
+    /**
+     * 转换思路，把加换成减
+     * 只需要把所有数减小成和最小数一致就可以了，
+     */
+    public int minMoves2(int[] nums) {
+        int min = 0, res =0;
+        for (int i=0; i<nums.length; i++){
+            if (nums[i]<min){
+                min = nums[i];
+            }
+        }
+        for (int i=0; i<nums.length; i++){
+            res = nums[i]-min;
+        }
+        return res;
+    }
+
+
 
 }
