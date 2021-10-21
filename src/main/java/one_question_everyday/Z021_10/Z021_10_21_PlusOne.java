@@ -30,6 +30,9 @@ package one_question_everyday.Z021_10;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
+
+import first_practice.array.easy.PlusOne_66;
+
 /**
  * @author zyk
  * @description
@@ -37,8 +40,24 @@ package one_question_everyday.Z021_10;
  */
 public class Z021_10_21_PlusOne {
 
+    /** 改题与{@link PlusOne_66} 相同，解法思路一样，但是前者效率更高 */
     public int[] plusOne(int[] digits) {
-        return new int[]{};
+        int[] res = new int[digits.length+1];
+        for (int i=digits.length-1; i>=0; i--) {
+            if (digits[i] != 9){
+                digits[i] = digits[i]+1;
+                return digits;
+            }else {
+                digits[i] = 0;
+            }
+        }
+        res[0] = 1;
+        return res;
     }
+
+    /**
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：37 MB, 在所有 Java 提交中击败了15.66%的用户
+     */
 
 }
