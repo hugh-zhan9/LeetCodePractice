@@ -40,7 +40,7 @@ import first_practice.array.easy.PlusOne_66;
  */
 public class Z021_10_21_PlusOne {
 
-    /** 改题与{@link PlusOne_66} 相同，解法思路一样，但是前者效率更高 */
+    /** 该题与{@link PlusOne_66} 相同，解法思路一样，但是前者效率更高 */
     public int[] plusOne(int[] digits) {
         int[] res = new int[digits.length+1];
         for (int i=digits.length-1; i>=0; i--) {
