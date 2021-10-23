@@ -27,6 +27,8 @@ package one_question_everyday.Z021_10;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
+import java.util.Arrays;
+
 /**
  * @author zyk
  * @description
@@ -60,9 +62,13 @@ public class Z021_10_20_MinMoves {
         }
         return true;
     }
-    
-    
-    
+
+
+
+    /**
+     * 每次操作既可以理解为使 n-1 个元素增加 1，也可以理解使 1 个元素减少 1。显然，后者更利于我们的计算。
+     * 于是，要计算让数组中所有元素相等的操作数，我们只需要计算将数组中所有元素都减少到数组中元素最小值所需的操作数。
+     */
 
 
     /**
@@ -70,18 +76,31 @@ public class Z021_10_20_MinMoves {
      * 只需要把所有数减小成和最小数一致就可以了，
      */
     public int minMoves2(int[] nums) {
-        int min = 0, res =0;
+        int min = Integer.MAX_VALUE, res =0;
         for (int i=0; i<nums.length; i++){
             if (nums[i]<min){
                 min = nums[i];
             }
         }
         for (int i=0; i<nums.length; i++){
-            res = nums[i]-min;
+            res += nums[i]-min;
         }
         return res;
     }
 
+    /**
+     * 执行用时：1 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：38.7 MB, 在所有 Java 提交中击败了95.75%的用户
+     */
 
+    public int minMoves3(int[] nums) {
+        // 求最小值的stream写法
+        int min = Arrays.stream(nums).min().getAsInt();
+        int res =0;
+        for (int i=0; i<nums.length; i++){
+            res += nums[i]-min;
+        }
+        return res;
+    }
 
 }
