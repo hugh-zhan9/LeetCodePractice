@@ -34,7 +34,7 @@ import java.util.Arrays;
  * @description
  * @since 2021/10/20 6:45
  */
-public class Z021_10_20_MinMoves {
+public class Z021_10_20_MinMoves_453_interesting {
 
     /**
      * 思路：每次找到最大的数，然后让其他几个数+1，直到所有数相等
