@@ -25,10 +25,7 @@ package first_practice.hash.easy;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import java.util.*;
 
 /**
  * @author zyk
@@ -37,16 +34,60 @@ import java.util.stream.Collectors;
  */
 public class GetImportance_690 {
 
+    /** 深度优先 */
+    private Map<Integer, Employee> map = new HashMap<>();
+
     public int getImportance(List<Employee> employees, int id) {
-        Optional<Employee> leader = employees.stream().filter(x -> x.id == id).findFirst();
-        List<Integer> subordinates = leader.get().subordinates;
-        int importance = leader.get().importance;
-        List<Employee> employe = employees.stream().filter(x -> subordinates.contains(x.id)).collect(Collectors.toList());
-        for (Employee employee : employe){
-            importance += employee.importance;
+        for (Employee employee:employees){
+            map.put(employee.id, employee);
+        }
+        return dfs(id);
+    }
+
+    public int dfs(int id){
+        Employee employee = map.get(id);
+        int importance = employee.importance;
+        List<Integer> subordinates = employee.subordinates;
+        for (Integer i:subordinates){
+            importance += dfs(i);
         }
         return importance;
     }
+
+    /**
+     * 执行用时：4 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：40.2 MB, 在所有 Java 提交中击败了12.71%的用户
+     */
+    
+    
+    /** 广度优先 */
+    public int getImportance2(List<Employee> employees, int id) {
+        Map<Integer, Employee> map = new HashMap<>();
+        for (Employee employee : employees) {
+            map.put(employee.id, employee);
+        }
+        int total = 0;
+        Queue<Integer> queue = new LinkedList<Integer>();
+        queue.offer(id);
+        while (!queue.isEmpty()) {
+            // poll 移除并返问队列头部的元素. 如果队列为空, 则返回null
+            int curId = queue.poll();
+            Employee employee = map.get(curId);
+            total += employee.importance;
+            List<Integer> subordinates = employee.subordinates;
+
+            for (int subId : subordinates) {
+                // offer 添加一个元素并返回true. 如果队列已满, 则返回false
+                queue.offer(subId);
+            }
+
+        }
+        return total;
+    }
+
+    /**
+     * 没写出来
+     */
 
 }
 
