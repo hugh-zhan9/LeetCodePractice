@@ -51,8 +51,10 @@ package one_question_everyday.Z021_11;
  */
 public class Z021_11_02_DeleteNode {
 
+    /** 既然不能删除本节点，就让当前节点变成下一个节点 */
     public void deleteNode(ListNode node) {
-
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 
 }
