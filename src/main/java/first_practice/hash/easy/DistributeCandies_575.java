@@ -31,7 +31,7 @@ import java.util.*;
  * @description
  * @since 2021/10/20 21:10
  */
-public class DistributeCandies_573 {
+public class DistributeCandies_575 {
 
     public int distributeCandies(int[] candyType) {
         Arrays.sort(candyType);
