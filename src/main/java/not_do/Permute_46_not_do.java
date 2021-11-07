@@ -36,7 +36,7 @@ import java.util.List;
  * @description
  * @since 2021/11/7 10:35
  */
-public class Permute_46 {
+public class Permute_46_not_do {
 
     /** 官方题解：回溯 */
     public List<List<Integer>> permute(int[] nums) {

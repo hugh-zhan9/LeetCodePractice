@@ -1,4 +1,4 @@
-package study_plan.entry.twelfth_day;
+package not_do;
 
 /**
  * 给定一个三角形 triangle ，找出自顶向下的最小路径和。
