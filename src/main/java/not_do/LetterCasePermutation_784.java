@@ -133,9 +133,7 @@ public class LetterCasePermutation_784 {
 
             ans.add(word.toString());
         }
-
         return ans;
-
     }
 
 
