@@ -1,4 +1,4 @@
-package one_question_everyday.Z021_11;
+package not_do;
 
 /**
  * 给你一个整数数组 arr 和一个整数 difference，

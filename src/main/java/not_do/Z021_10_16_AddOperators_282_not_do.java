@@ -1,4 +1,4 @@
-package one_question_everyday.Z021_10;
+package not_do;
 
 /**
  * 给定一个仅包含数字 0-9 的字符串 num 和一个目标值整数 target，

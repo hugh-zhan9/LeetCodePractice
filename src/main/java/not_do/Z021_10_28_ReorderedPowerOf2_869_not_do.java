@@ -1,4 +1,4 @@
-package one_question_everyday.Z021_10;
+package not_do;
 
 /**
  * 给定正整数 N，我们按任何顺序（包括原始顺序）将数字重新排序，注意其前导数字不能为零。

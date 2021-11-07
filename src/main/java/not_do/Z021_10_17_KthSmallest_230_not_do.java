@@ -1,4 +1,4 @@
-package one_question_everyday.Z021_10;
+package not_do;
 
 /**
  * 给定一个二叉搜索树的根节点root ，和一个整数k，请你设计一个算法查找其中第k个最小元素（从 1 开始计数）。

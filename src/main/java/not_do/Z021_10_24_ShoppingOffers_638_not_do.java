@@ -1,4 +1,4 @@
-package one_question_everyday.Z021_10;
+package not_do;
 
 /**
  * 在LeetCode商店中， 有n件在售的物品。每件物品都有对应的价格。
