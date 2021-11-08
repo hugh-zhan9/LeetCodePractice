@@ -44,7 +44,7 @@ package study_plan.entry.thirteen_day;
  * @description
  * @since 2021/11/8 9:50
  */
-public class HammingWeight_191_not_do {
+public class HammingWeight_191 {
 
     /** [官方题解](https://leetcode-cn.com/problems/number-of-1-bits/solution/wei-1de-ge-shu-by-leetcode-solution-jnwf/) */
 
