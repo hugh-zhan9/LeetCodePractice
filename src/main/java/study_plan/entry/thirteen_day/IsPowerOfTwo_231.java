@@ -44,7 +44,7 @@ package study_plan.entry.thirteen_day;
  * @description
  * @since 2021/11/8 9:38
  */
-public class IsPowerOfTwo_231_not_do {
+public class IsPowerOfTwo_231 {
 
     public boolean isPowerOfTwo(int n) {
         return n > 0 && (n & (n - 1)) == 0;
