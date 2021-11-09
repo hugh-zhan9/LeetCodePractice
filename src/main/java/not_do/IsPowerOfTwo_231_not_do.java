@@ -1,4 +1,4 @@
-package study_plan.entry.thirteen_day;
+package study_plan.entry.thirteenth_day;
 
 /**
  * 给你一个整数 n，请你判断该整数是否是2的幂次方。如果是，返回 true；否则，返回 false。
