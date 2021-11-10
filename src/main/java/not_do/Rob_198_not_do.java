@@ -54,7 +54,6 @@ public class Rob_198_not_do {
         return dp[length - 1];
     }
 
-
     public int rob_dp(int[] nums) {
         int[] dp = new int[nums.length+1];
         dp[0] = 0;
