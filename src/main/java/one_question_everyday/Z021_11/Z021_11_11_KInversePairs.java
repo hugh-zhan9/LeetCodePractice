@@ -30,7 +30,7 @@ package one_question_everyday.Z021_11;
  * @description
  * @since 2021/11/11 9:18
  */
-public class Z021_11_11_KInversePairs_not_do {
+public class Z021_11_11_KInversePairs {
 
     public int kInversePairs(int n, int k) {
         final int MOD = 1000000007;
