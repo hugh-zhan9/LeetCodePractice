@@ -39,6 +39,10 @@ package one_question_everyday.Z021_11;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 /**
  * @author zyk
  * @description
@@ -47,7 +51,29 @@ package one_question_everyday.Z021_11;
 public class Z021_11_15_BulbSwitch {
 
     public int bulbSwitch(int n) {
-        return -1;
+        Map<Integer, Integer> map = new HashMap<>();
+        int gap =3, i=0, j=0;
+        while (i <= n){
+            map.put(i,j++);
+            i = i+gap;
+            gap = gap+2;
+        }
+        int key = 0;
+        Iterator<Integer> iterator = map.keySet().iterator();
+        while (iterator.hasNext()){
+            key = Math.max(key, iterator.next());
+        }
+        return map.containsKey(n) ? map.get(n) : map.get(key)+1;
     }
+
+    /**
+     * 执行用时：7 ms, 在所有 Java 提交中击败了5.12%的用户
+     * 内存消耗：37.5 MB, 在所有 Java 提交中击败了5.40%的用户
+     */
+
+    // 一开始尝试简单模拟来实现，结果发现数据量太大，会导致内存超出和超时。
+    // 琢磨着可能有规律，结果还真找到了规律，就按照规律写了下代码，写的还蛮艰难。
+    // [参考题解](https://leetcode-cn.com/problems/bulb-switcher/solution/gong-shui-san-xie-jing-dian-shu-lun-tui-upnnb/)
+    // 看了眼题解之后 -> 什么瞎几把题目。(╯‵□′)╯︵┻━┻
 
 }
