@@ -69,6 +69,20 @@ public class Z021_11_18_FindTilt {
         return sumLeft + sumRight + node.val;
     }
 
+
+    // https://leetcode-cn.com/problems/binary-tree-tilt/solution/gong-shui-san-xie-jian-dan-er-cha-shu-di-ekz4/
+
+
+    public int findTilt2(TreeNode root) {
+        if (root == null) return 0;
+        return findTilt2(root.left) + findTilt2(root.right) + Math.abs(getSum(root.left) - getSum(root.right));
+    }
+    int getSum(TreeNode root) {
+        if (root == null) return 0;
+        return getSum(root.left) + getSum(root.right) + root.val;
+    }
+
+
 }
 
 
