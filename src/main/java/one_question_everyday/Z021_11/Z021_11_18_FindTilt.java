@@ -52,6 +52,9 @@ package one_question_everyday.Z021_11;
  * @since 2021/11/18 7:17
  */
 public class Z021_11_18_FindTilt {
+
+    // 用一个成员变量在dfs过程中记录每一个当前结点 左子树所有结点和 减 右子树所有结点和 的结果，dfs返回值是当前子树的所有结点值；
+
     int ans;
 
     public int findTilt(TreeNode root) {
