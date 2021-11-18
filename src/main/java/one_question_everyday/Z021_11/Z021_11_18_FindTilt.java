@@ -52,14 +52,21 @@ package one_question_everyday.Z021_11;
  * @since 2021/11/18 7:17
  */
 public class Z021_11_18_FindTilt {
+    int ans;
 
     public int findTilt(TreeNode root) {
-        dfs();
-        return -1;
+        dfs(root);
+        return ans;
     }
 
-    public void dfs(){
-
+    public int dfs(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        int sumLeft = dfs(node.left);
+        int sumRight = dfs(node.right);
+        ans += Math.abs(sumLeft - sumRight);
+        return sumLeft + sumRight + node.val;
     }
 
 }
